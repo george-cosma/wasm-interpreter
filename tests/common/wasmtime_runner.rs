@@ -1,6 +1,9 @@
+use crate::common::{Runner, UniversalParams, UniversalResults};
+
 pub struct WASMTimeRunner<T> {
     instance: wasmtime::Instance,
     store: wasmtime::Store<T>,
+    func_name: Option<String>,
 }
 
 impl<T> WASMTimeRunner<T> {
@@ -12,24 +15,40 @@ impl<T> WASMTimeRunner<T> {
         let mut store = wasmtime::Store::new(&engine, initial_store);
         let instance = linker.instantiate(&mut store, &module)?;
 
-        Ok(WASMTimeRunner { instance, store })
+        Ok(WASMTimeRunner { instance, store, func_name: None })
     }
+}
 
-    pub fn execute<WTParams, WTReturns>(
+impl<T> Runner for WASMTimeRunner<T> {
+    fn execute<Params: UniversalParams, Output: UniversalResults>(
         &mut self,
+        _func_id: usize,
         func_name: &str,
-        params: WTParams,
-    ) -> wasmtime::Result<WTReturns>
-    where
-        WTParams: wasmtime::WasmParams,
-        WTReturns: wasmtime::WasmResults,
-    {
-        // use wasmtime::*;
-
+        params: Params,
+    ) -> Result<Output, Box<dyn std::error::Error>> {
         let function = self
-            .instance
-            .get_typed_func::<WTParams, WTReturns>(&mut self.store, func_name)?;
+        .instance
+        .get_typed_func::<Params, Output>(&mut self.store, func_name)?;
 
-        function.call(&mut self.store, params)
+        Ok(function.call(&mut self.store, params)?)
+    }
+    
+    fn set_function(&mut self, _func_id: usize, func_name: &str) {
+        self.func_name = Some(func_name.to_string());
+    }
+    
+    fn execute_fn<Params: UniversalParams, Output: UniversalResults>(
+        &mut self,
+        params: Params,
+    ) -> Result<Output, Box<dyn std::error::Error>> {
+        if let Some(func_name) = &self.func_name {
+            let function = self
+                .instance
+                .get_typed_func::<Params, Output>(&mut self.store, func_name)?;
+
+            Ok(function.call(&mut self.store, params)?)
+        } else {
+            Err("No function set to run".into())
+        }
     }
 }

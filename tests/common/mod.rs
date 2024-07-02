@@ -1,4 +1,5 @@
 pub(crate) mod wasmtime_runner;
+pub(crate) mod wasm_interpreter_runner;
 
 extern crate wasm;
 use std::error::Error;
@@ -6,99 +7,62 @@ use std::fmt::Debug;
 use wasm::value::InteropValueList;
 use wasmtime::{WasmParams, WasmResults, WasmTy};
 
-// TODO: also add wasmi?
-pub enum Runner<'a, StoreType> {
-    Interpreter(wasm::RuntimeInstance<'a>),
-    WASMTime(wasmtime_runner::WASMTimeRunner<StoreType>),
-}
 
-impl<StoreType> Runner<'_, StoreType> {
-    pub fn execute<
-        Params: InteropValueList + WasmParams,
-        Output: InteropValueList + WasmResults,
-    >(
+pub trait UniversalParams : wasmtime::WasmParams + wasm::value::InteropValueList {}
+impl<T> UniversalParams for T where T : wasmtime::WasmParams + wasm::value::InteropValueList {}
+
+pub trait UniversalResults : wasmtime::WasmResults + wasm::value::InteropValueList {}
+impl<T> UniversalResults for T where T : wasmtime::WasmResults + wasm::value::InteropValueList {}
+
+// TODO: also add wasmi?
+pub trait Runner {
+    /// Execute a function with the given parameters and return the result
+    fn execute<Params: UniversalParams, Output: UniversalResults>(
         &mut self,
         func_id: usize,
         func_name: &str,
         params: Params,
-    ) -> Result<Output, Box<dyn Error>> {
-        match self {
-            Runner::Interpreter(runner) => Ok(runner.invoke_func(func_id, params)),
-            Runner::WASMTime(runner) => Ok(runner.execute(func_name, params)?),
-        }
-    }
-}
+    ) -> Result<Output, Box<dyn Error>>;
 
-impl<'a, StoreType> From<wasm::RuntimeInstance<'a>> for Runner<'a, StoreType> {
-    fn from(value: wasm::RuntimeInstance<'a>) -> Self {
-        Runner::Interpreter(value)
-    }
-}
+    /// To help simply the workflow, a runner can be programmed to run a specific function
+    /// over and over again. This function sets the function to be run.
+    fn set_function(&mut self, func_id: usize, func_name: &str);
 
-impl<'a, StoreType> From<wasmtime_runner::WASMTimeRunner<StoreType>> for Runner<'a, StoreType> {
-    fn from(value: wasmtime_runner::WASMTimeRunner<StoreType>) -> Self {
-        Runner::WASMTime(value)
-    }
-}
-
-pub struct FunctionRunner<'a, StoreType> {
-    inner: Runner<'a, StoreType>,
-    func_id: usize,
-    func_name: &'a str,
-}
-
-impl<'a, StoreType> FunctionRunner<'a, StoreType> {
-    pub fn new(inner: Runner<'a, StoreType>, func_id: usize, func_name: &'a str) -> Self {
-        FunctionRunner {
-            inner,
-            func_id,
-            func_name,
-        }
-    }
-
-    pub fn execute<
-        Params: InteropValueList + WasmParams,
-        Output: InteropValueList + WasmResults,
-    >(
+    /// Execute the function set by `set_function` with the given parameters and return the result
+    fn execute_fn<Params: UniversalParams, Output: UniversalResults>(
         &mut self,
         params: Params,
-    ) -> Result<Output, Box<dyn Error>> {
-        self.inner.execute(self.func_id, self.func_name, params)
-    }
+    ) -> Result<Output, Box<dyn Error>>;
 }
 
-pub fn poly_test<Params, Output, StoreType>(
-    params: Params,
-    expected_result: Output,
-    runners: &mut [FunctionRunner<StoreType>],
-) where
-    Params: InteropValueList + WasmTy + Clone,
-    Output: InteropValueList + WasmTy + Debug + PartialEq,
-{
-    for runner in runners {
-        let output = runner
-            .execute::<Params, Output>(params.clone())
-            .expect("Runner execution failed");
-
-        assert_eq!(output, expected_result);
-    }
+#[macro_export]
+macro_rules! poly_test {
+    (($runner_name:ident, $assert:expr), $($runner:expr),+ ) => {
+        $(
+            {
+                let mut $runner_name = $runner;
+                
+                $assert
+            }
+        )+
+    };
 }
 
-pub fn poly_test_once<Params, Output, StoreType>(
-    params: Params,
-    expected_result: Output,
-    function_id: usize,
-    function_name: &str,
-    runners: &mut [Runner<StoreType>],
-) where
-    Params: InteropValueList + WasmParams + Clone,
-    Output: InteropValueList + WasmResults + Debug + PartialEq,
-{
-    for runner in runners {
-        let output = runner
-            .execute::<Params, Output>(function_id, function_name, params.clone())
-            .expect("Runner execution failed");
+// pub fn poly_test_once<Params, Output>(
+//     params: Params,
+//     expected_result: Output,
+//     function_id: usize,
+//     function_name: &str,
+//     runners: &mut [impl Runner],
+// ) where
+//     Params: UniversalParams + Clone,
+//     Output: UniversalResults + Debug + PartialEq,
+// {
+//     for runner in runners {
+//         let output = runner
+//             .execute::<Params, Output>(function_id, function_name, params.clone())
+//             .expect("Runner execution failed");
 
-        assert_eq!(output, expected_result);
-    }
-}
+//         assert_eq!(output, expected_result);
+//     }
+// }
