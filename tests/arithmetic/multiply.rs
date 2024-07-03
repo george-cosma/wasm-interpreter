@@ -22,6 +22,6 @@ pub fn multiply() {
     assert_eq!(0, instance.invoke_func(0, 0));
     assert_eq!(-30, instance.invoke_func(0, -10));
 
-    assert_eq!(i32::MAX - 5, instance.invoke_func(0, i32::MAX-1));
-    assert_eq!(i32::MIN + 3, instance.invoke_func(0, i32::MIN+1));
+    assert_eq!(i32::MAX - 5, instance.invoke_func(0, i32::MAX - 1));
+    assert_eq!(i32::MIN + 3, instance.invoke_func(0, i32::MIN + 1));
 }
