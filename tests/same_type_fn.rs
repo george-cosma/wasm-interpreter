@@ -5,6 +5,7 @@ fn same_type_fn() {
 
     let wat = r#"
     (module
+        (import "test" "testFunc" (func (param i64 i64) (result i64)))
         (func (export "add_one") (param $x i32) (result i32)
             local.get $x
             i32.const 1
