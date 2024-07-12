@@ -52,14 +52,16 @@ jobs:
       - name: Run & compile coverage etst
         run: |
           cargo clean &&
-          OBJS=$(RUSTFLAGS="-C instrument-coverage -Z coverage-options=branch" cargo +nightly test --tests --no-run -- --test-threads=1 2>&1 | grep -oP '(?<=\()[^ ]+[\\\/][^ \)]+' | sed 's/^/--object /' | sed 's/\r//' | tr '\n' ' ') &&
+          RUSTFLAGS="-C instrument-coverage -Z coverage-options=branch,mcdc" cargo +nightly test --tests --no-run &&
+          OBJS=$(RUSTFLAGS="-C instrument-coverage -Z coverage-options=branch,mcdc" cargo +nightly test --tests --no-run -- --test-threads=1 2>&1 | grep -oP '(?<=\()[^ ]+[\\\/][^ \)]+' | sed 's/^/--object /' | sed 's/\r//' | tr '\n' ' ') &&
+          rm -rf *.profraw &&
           RUSTFLAGS="-C instrument-coverage -Z coverage-options=branch,mcdc" cargo +nightly test --tests -- --test-threads=1 &&
           cargo profdata -- merge -sparse *.profraw -o default.profdata &&
-          cargo cov -- show -show-line-counts-or-regions -output-dir=coverage -format=html --ignore-filename-regex='.*cargo.*' --instr-profile=default.profdata $OBJS
+          cargo cov -- show -show-line-counts-or-regions -output-dir=cov_out -format=html --ignore-filename-regex='.*cargo.*' --instr-profile=default.profdata $OBJS
       
       # -=-=-=-= Preparation =-=-=-=-
       - name: Prepare web files
-        run: mkdir -p web && mv ./target/doc/ ./web/rustdocs/ && mv ./output/html/ ./web/strictdoc/ && mv ./coverage ./web/coverage
+        run: mkdir -p web && mv ./target/doc/ ./web/rustdocs/ && mv ./output/html/ ./web/strictdoc/ && mv ./cov_out/ ./web/coverage
 
       # -=-=-=-= Deploy =-=-=-=-
       - name: Deploy to Github Pages
