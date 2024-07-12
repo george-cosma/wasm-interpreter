@@ -47,8 +47,7 @@ jobs:
       - name: Install coverage test tooling
         run: |
           rustup component add llvm-tools-preview &&
-          cargo install cargo-binutils && 
-          cargo install cargo-cov
+          cargo install cargo-binutils
       - name: Run & compile coverage etst
         run: |
           cargo clean &&
