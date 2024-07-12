@@ -1,4 +1,4 @@
-name: Requirement Preview Deploy
+name: Coverage Preview Deploy
 
 on:
   # When a PR is merged (or force push to main)
@@ -8,6 +8,7 @@ on:
       - reopened
       - synchronize
       - closed
+      - labeled
     tags:
       - "coverage"
 
