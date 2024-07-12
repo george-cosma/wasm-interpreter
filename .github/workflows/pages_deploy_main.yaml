@@ -53,7 +53,7 @@ jobs:
           rustup toolchain install nightly &&
           rustup component add llvm-tools-preview &&
           cargo install cargo-binutils
-      - name: Run & compile coverage etst
+      - name: Run & compile coverage test
         run: |
           cargo clean &&
           RUSTFLAGS="-C instrument-coverage -Z coverage-options=branch,mcdc" cargo +nightly test --tests --no-run &&
