@@ -20,8 +20,8 @@ concurrency: preview-cov-${{ github.ref }}
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.labels.*.name, 'coverage')
     steps:
-      if: contains(github.event.pull_request.labels.*.name, 'coverage')
       - uses: actions/checkout@v4
       # -=-=-=-= Coverage test =-=-=-=-
       - name: Install coverage test tooling
