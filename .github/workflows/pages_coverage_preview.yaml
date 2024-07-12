@@ -9,8 +9,6 @@ on:
       - synchronize
       - closed
       - labeled
-    tags:
-      - "coverage"
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -23,6 +21,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      if: contains(github.event.pull_request.labels.*.name, 'coverage')
       - uses: actions/checkout@v4
       # -=-=-=-= Coverage test =-=-=-=-
       - name: Install coverage test tooling
