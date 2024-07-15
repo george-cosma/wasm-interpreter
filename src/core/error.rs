@@ -5,6 +5,8 @@ use core::str::Utf8Error;
 use crate::core::reader::section_header::SectionTy;
 use crate::core::reader::types::ValType;
 
+const MAX_PARAMS: usize = 5;
+
 #[derive(Debug, PartialEq, Eq, Clone)]
 pub enum RuntimeError {
     DivideBy0,
@@ -38,6 +40,30 @@ pub enum Error {
     InvalidGlobalIdx(GlobalIdx),
     GlobalIsConst,
     RuntimeError(RuntimeError),
+    UnsupportedFeature(&'static str),
+    InvalidTypesInInvokation([Option<ValType>; MAX_PARAMS], [Option<ValType>; MAX_PARAMS]),
+}
+
+impl Error {
+    pub fn new_invalid_types_in_invokation(
+        actual: &[ValType],
+        expected: &[ValType],
+    ) -> Self {
+        let mut actual_iter = actual.into_iter().copied();
+        let mut expected_iter = expected.iter().copied();
+
+        let mut actuals = [None; MAX_PARAMS];
+        let mut expecteds = [None; MAX_PARAMS];
+
+        for i in 0..MAX_PARAMS {
+            actuals[i] = actual_iter.next();
+            expecteds[i] = expected_iter.next();
+        }
+
+        Error::InvalidTypesInInvokation(actuals, expecteds)
+    
+    }
+    
 }
 
 impl Display for Error {
@@ -107,6 +133,23 @@ impl Display for Error {
             Error::RuntimeError(err) => match err {
                 RuntimeError::DivideBy0 => f.write_str("Divide by zero is not permitted"),
                 RuntimeError::UnrepresentableResult => f.write_str("Result is unrepresentable"),
+            },
+            Error::UnsupportedFeature(msg) => f.write_fmt(format_args!("Unsupported feature or not yet implemented: `{msg}`")),
+            Error::InvalidTypesInInvokation(actual, expected) => {
+                f.write_str("Invalid types in invokation. Expected:")?;
+                for tp in expected {
+                    if let Some(tp) = tp {
+                        f.write_fmt(format_args!("{tp:?} "))?;
+                    }
+                }
+                f.write_str("but got:")?;
+                for tp in actual {
+                    if let Some(tp) = tp {
+                        f.write_fmt(format_args!("{tp:?} "))?;
+                    }
+                }
+
+                Ok(())
             },
         }
     }

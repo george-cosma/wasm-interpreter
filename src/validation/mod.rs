@@ -121,13 +121,15 @@ pub fn validate(wasm: &[u8]) -> Result<ValidationInfo> {
     while (skip_section(&mut wasm, &mut header)?).is_some() {}
 
     let _: Option<()> = handle_section(&mut wasm, &mut header, SectionTy::Element, |_, _| {
-        todo!("element section not yet supported")
+        // TODO: implement element section
+        Err(Error::UnsupportedFeature("element section not yet supported"))
     })?;
 
     while (skip_section(&mut wasm, &mut header)?).is_some() {}
 
     let _: Option<()> = handle_section(&mut wasm, &mut header, SectionTy::DataCount, |_, _| {
-        todo!("data count section not yet supported")
+        // TODO: implement data count section
+        Err(Error::UnsupportedFeature("data count section not yet supported"))
     })?;
 
     while (skip_section(&mut wasm, &mut header)?).is_some() {}
@@ -137,12 +139,14 @@ pub fn validate(wasm: &[u8]) -> Result<ValidationInfo> {
     })?
     .unwrap_or_default();
 
+    // TODO: make error -> what error?
     assert_eq!(func_blocks.len(), functions.len(), "these should be equal"); // TODO check if this is in the spec
 
     while (skip_section(&mut wasm, &mut header)?).is_some() {}
 
     let _: Option<()> = handle_section(&mut wasm, &mut header, SectionTy::Data, |_, _| {
-        todo!("data section not yet supported")
+        // TODO: implement data section
+        Err(Error::UnsupportedFeature("data section not yet supported"))
     })?;
 
     while (skip_section(&mut wasm, &mut header)?).is_some() {}

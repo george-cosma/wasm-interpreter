@@ -13,7 +13,7 @@ use crate::execution::store::{FuncInst, GlobalInst, MemInst, Store};
 use crate::execution::value::Value;
 use crate::validation::code::read_declared_locals;
 use crate::value::InteropValueList;
-use crate::Error::RuntimeError;
+use crate::Error::{self, RuntimeError};
 use crate::RuntimeError::{DivideBy0, UnrepresentableResult};
 use crate::{Result, ValidationInfo};
 
@@ -77,10 +77,10 @@ where
 
         // Check correct function parameters and return types
         if func_ty.params.valtypes != Param::TYS {
-            panic!("Invalid `Param` generics");
+            return Err(Error::new_invalid_types_in_invokation(&func_ty.params.valtypes, Param::TYS));
         }
         if func_ty.returns.valtypes != Returns::TYS {
-            panic!("Invalid `Returns` generics");
+            return Err(Error::new_invalid_types_in_invokation(&func_ty.returns.valtypes, Returns::TYS));
         }
 
         let mut stack = Stack::new();
