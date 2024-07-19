@@ -293,7 +293,8 @@
 <a href="#293" id="293">293</a>
 <a href="#294" id="294">294</a>
 <a href="#295" id="295">295</a>
-</pre></div><pre class="rust"><code><span class="doccomment">//! Methods to read WASM Types from a [Wasm] object.
+<a href="#296" id="296">296</a>
+</pre></div><pre class="rust"><code><span class="doccomment">//! Methods to read WASM Types from a [WasmReader] object.
 //!
 //! See: &lt;https://webassembly.github.io/spec/core/binary/types.html&gt;
 
@@ -310,9 +311,10 @@
 <span class="kw">pub mod </span>global;
 <span class="kw">pub mod </span>import;
 <span class="kw">pub mod </span>memarg;
+<span class="kw">pub mod </span>opcode;
 <span class="kw">pub mod </span>values;
 
-<span class="doccomment">/// https://webassembly.github.io/spec/core/binary/types.html#number-types
+<span class="doccomment">/// &lt;https://webassembly.github.io/spec/core/binary/types.html#number-types&gt;
 </span><span class="attr">#[derive(Debug, Copy, Clone, PartialEq, Eq)]
 </span><span class="kw">pub enum </span>NumType {
     I32,
@@ -349,7 +351,7 @@
     }
 }
 
-<span class="doccomment">/// https://webassembly.github.io/spec/core/binary/types.html#vector-types
+<span class="doccomment">/// &lt;https://webassembly.github.io/spec/core/binary/types.html#vector-types&gt;
 </span><span class="kw">struct </span>VecType;
 
 <span class="kw">impl </span>WasmReadable <span class="kw">for </span>VecType {
@@ -371,7 +373,7 @@
     }
 }
 
-<span class="doccomment">/// https://webassembly.github.io/spec/core/binary/types.html#reference-types
+<span class="doccomment">/// &lt;https://webassembly.github.io/spec/core/binary/types.html#reference-types&gt;
 </span><span class="attr">#[derive(Debug, Copy, Clone, PartialEq, Eq)]
 </span><span class="kw">pub enum </span>RefType {
     FuncRef,
@@ -399,7 +401,7 @@
     }
 }
 
-<span class="doccomment">/// https://webassembly.github.io/spec/core/binary/types.html#reference-types
+<span class="doccomment">/// &lt;https://webassembly.github.io/spec/core/binary/types.html#reference-types&gt;
 /// TODO flatten [NumType] and [RefType] enums, as they are not used individually and `wasmparser` also does it.
 </span><span class="attr">#[derive(Debug, Copy, Clone, PartialEq, Eq)]
 #[allow(clippy::all)]
@@ -441,7 +443,7 @@
     }
 }
 
-<span class="doccomment">/// https://webassembly.github.io/spec/core/binary/types.html#value-types
+<span class="doccomment">/// &lt;https://webassembly.github.io/spec/core/binary/types.html#value-types&gt;
 </span><span class="attr">#[derive(Debug, Clone, PartialEq, Eq)]
 </span><span class="kw">pub struct </span>ResultType {
     <span class="kw">pub </span>valtypes: Vec&lt;ValType&gt;,
@@ -463,7 +465,7 @@
     }
 }
 
-<span class="doccomment">/// https://webassembly.github.io/spec/core/binary/types.html#function-types
+<span class="doccomment">/// &lt;https://webassembly.github.io/spec/core/binary/types.html#function-types&gt;
 </span><span class="attr">#[derive(Debug, Clone, PartialEq, Eq)]
 </span><span class="kw">pub struct </span>FuncType {
     <span class="kw">pub </span>params: ResultType,

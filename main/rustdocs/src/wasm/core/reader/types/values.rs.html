@@ -109,11 +109,11 @@
 <a href="#109" id="109">109</a>
 <a href="#110" id="110">110</a>
 <a href="#111" id="111">111</a>
-</pre></div><pre class="rust"><code><span class="doccomment">//! Methods to read basic WASM Values from a [Wasm] object.
+</pre></div><pre class="rust"><code><span class="doccomment">//! Methods to read basic WASM Values from a [WasmReader] object.
 //!
 //! See: &lt;https://webassembly.github.io/spec/core/binary/values.html&gt;
 //!
-//! Note: If any of these methods return `Err`, they may have consumed some bytes from the [Wasm] object and thus consequent calls may result in unexpected behaviour.
+//! Note: If any of these methods return `Err`, they may have consumed some bytes from the [WasmReader] object and thus consequent calls may result in unexpected behaviour.
 //! This is due to the fact that these methods read elemental types which cannot be split.
 
 </span><span class="kw">use </span>alloc::vec::Vec;
@@ -123,7 +123,7 @@
 <span class="kw">use crate</span>::{Error, <span class="prelude-ty">Result</span>};
 
 <span class="kw">impl </span>WasmReader&lt;<span class="lifetime">'_</span>&gt; {
-    <span class="doccomment">/// Note: If `Err`, the [Wasm] object is no longer guaranteed to be in a valid state
+    <span class="doccomment">/// Note: If `Err`, the [WasmReader] object is no longer guaranteed to be in a valid state
     </span><span class="kw">pub fn </span>read_u8(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;u8&gt; {
         <span class="kw">let </span>value = <span class="kw-2">*</span><span class="self">self</span>.current.first().ok_or(Error::Eof)<span class="question-mark">?</span>;
 
@@ -136,7 +136,7 @@
     }
 
     <span class="doccomment">/// Parses a variable-length `u32` as specified by [LEB128](https://en.wikipedia.org/wiki/LEB128#Unsigned_LEB128).
-    /// Note: If `Err`, the [Wasm] object is no longer guaranteed to be in a valid state
+    /// Note: If `Err`, the [WasmReader] object is no longer guaranteed to be in a valid state
     </span><span class="kw">pub fn </span>read_var_u32(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;u32&gt; {
         <span class="kw">let </span><span class="kw-2">mut </span>result: u32 = <span class="number">0</span>;
         <span class="kw">let </span><span class="kw-2">mut </span>shift: u32 = <span class="number">0</span>;
@@ -173,7 +173,7 @@
         <span class="prelude-val">Ok</span>(result)
     }
 
-    <span class="doccomment">/// Note: If `Err`, the [Wasm] object is no longer guaranteed to be in a valid state
+    <span class="doccomment">/// Note: If `Err`, the [WasmReader] object is no longer guaranteed to be in a valid state
     </span><span class="kw">pub fn </span>read_name(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw-2">&amp;</span>str&gt; {
         <span class="kw">let </span>len = <span class="self">self</span>.read_var_u32()<span class="question-mark">? </span><span class="kw">as </span>usize;
 
@@ -198,7 +198,7 @@
         })
     }
 
-    <span class="doccomment">/// Note: If `Err`, the [Wasm] object is no longer guaranteed to be in a valid state
+    <span class="doccomment">/// Note: If `Err`, the [WasmReader] object is no longer guaranteed to be in a valid state
     </span><span class="kw">pub fn </span>read_vec&lt;T, F&gt;(<span class="kw-2">&amp;mut </span><span class="self">self</span>, <span class="kw-2">mut </span>read_element: F) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;T&gt;&gt;
     <span class="kw">where
         </span>F: FnMut(<span class="kw-2">&amp;mut </span>WasmReader) -&gt; <span class="prelude-ty">Result</span>&lt;T&gt;,

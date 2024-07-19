@@ -113,6 +113,8 @@
 <a href="#113" id="113">113</a>
 <a href="#114" id="114">114</a>
 <a href="#115" id="115">115</a>
+<a href="#116" id="116">116</a>
+<a href="#117" id="117">117</a>
 </pre></div><pre class="rust"><code><span class="kw">use </span><span class="kw">crate</span>::core::indices::GlobalIdx;
 <span class="kw">use </span>core::fmt::{Display, Formatter};
 <span class="kw">use </span>core::str::Utf8Error;
@@ -124,6 +126,7 @@
 </span><span class="kw">pub enum </span>RuntimeError {
     DivideBy0,
     UnrepresentableResult,
+    FunctionNotFound,
 }
 
 <span class="attr">#[derive(Debug, PartialEq, Eq, Clone)]
@@ -222,6 +225,7 @@
             Error::RuntimeError(err) =&gt; <span class="kw">match </span>err {
                 RuntimeError::DivideBy0 =&gt; f.write_str(<span class="string">"Divide by zero is not permitted"</span>),
                 RuntimeError::UnrepresentableResult =&gt; f.write_str(<span class="string">"Result is unrepresentable"</span>),
+                RuntimeError::FunctionNotFound =&gt; f.write_str(<span class="string">"Function not found"</span>),
             },
         }
     }

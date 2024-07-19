@@ -209,32 +209,6 @@
 <a href="#209" id="209">209</a>
 <a href="#210" id="210">210</a>
 <a href="#211" id="211">211</a>
-<a href="#212" id="212">212</a>
-<a href="#213" id="213">213</a>
-<a href="#214" id="214">214</a>
-<a href="#215" id="215">215</a>
-<a href="#216" id="216">216</a>
-<a href="#217" id="217">217</a>
-<a href="#218" id="218">218</a>
-<a href="#219" id="219">219</a>
-<a href="#220" id="220">220</a>
-<a href="#221" id="221">221</a>
-<a href="#222" id="222">222</a>
-<a href="#223" id="223">223</a>
-<a href="#224" id="224">224</a>
-<a href="#225" id="225">225</a>
-<a href="#226" id="226">226</a>
-<a href="#227" id="227">227</a>
-<a href="#228" id="228">228</a>
-<a href="#229" id="229">229</a>
-<a href="#230" id="230">230</a>
-<a href="#231" id="231">231</a>
-<a href="#232" id="232">232</a>
-<a href="#233" id="233">233</a>
-<a href="#234" id="234">234</a>
-<a href="#235" id="235">235</a>
-<a href="#236" id="236">236</a>
-<a href="#237" id="237">237</a>
 </pre></div><pre class="rust"><code><span class="kw">use </span>alloc::collections::VecDeque;
 <span class="kw">use </span>alloc::vec::Vec;
 <span class="kw">use </span>core::iter;
@@ -320,25 +294,27 @@
     };
 
     <span class="kw">loop </span>{
-        <span class="kw">let </span><span class="prelude-val">Ok</span>(instr) = wasm.read_u8() <span class="kw">else </span>{
+        <span class="kw">let </span><span class="prelude-val">Ok</span>(first_instr_byte) = wasm.read_u8() <span class="kw">else </span>{
             <span class="kw">return </span><span class="prelude-val">Err</span>(Error::ExprMissingEnd);
         };
-        <span class="macro">trace!</span>(<span class="string">"Read instruction byte {instr:#x?} ({instr})"</span>);
-        <span class="kw">match </span>instr {
+        <span class="macro">trace!</span>(<span class="string">"Read instruction byte {first_instr_byte:#X?} ({first_instr_byte})"</span>);
+
+        <span class="kw">use </span><span class="kw">crate</span>::core::reader::types::opcode::<span class="kw-2">*</span>;
+        <span class="kw">match </span>first_instr_byte {
             <span class="comment">// nop
-            </span><span class="number">0x01 </span>=&gt; {}
+            </span>NOP =&gt; {}
             <span class="comment">// end
-            </span><span class="number">0x0B </span>=&gt; {
+            </span>END =&gt; {
                 <span class="kw">return </span><span class="prelude-val">Ok</span>(());
             }
             <span class="comment">// local.get: [] -&gt; [t]
-            </span><span class="number">0x20 </span>=&gt; {
+            </span>LOCAL_GET =&gt; {
                 <span class="kw">let </span>local_idx = wasm.read_var_u32()<span class="question-mark">? </span><span class="kw">as </span>LocalIdx;
                 <span class="kw">let </span>local_ty = locals.get(local_idx).ok_or(Error::InvalidLocalIdx)<span class="question-mark">?</span>;
                 value_stack.push_back(<span class="kw-2">*</span>local_ty);
             }
             <span class="comment">// local.set [t] -&gt; [0]
-            </span><span class="number">0x21 </span>=&gt; {
+            </span>LOCAL_SET =&gt; {
                 <span class="kw">let </span>local_idx = wasm.read_var_u32()<span class="question-mark">? </span><span class="kw">as </span>LocalIdx;
                 <span class="kw">let </span>local_ty = locals.get(local_idx).ok_or(Error::InvalidLocalIdx)<span class="question-mark">?</span>;
                 <span class="kw">let </span>popped = value_stack.pop_back();
@@ -347,7 +323,7 @@
                 }
             }
             <span class="comment">// global.get [] -&gt; [t]
-            </span><span class="number">0x23 </span>=&gt; {
+            </span>GLOBAL_GET =&gt; {
                 <span class="kw">let </span>global_idx = wasm.read_var_u32()<span class="question-mark">? </span><span class="kw">as </span>GlobalIdx;
                 <span class="kw">let </span>global = globals
                     .get(global_idx)
@@ -356,7 +332,7 @@
                 value_stack.push_back(global.ty.ty);
             }
             <span class="comment">// global.set [t] -&gt; []
-            </span><span class="number">0x24 </span>=&gt; {
+            </span>GLOBAL_SET =&gt; {
                 <span class="kw">let </span>global_idx = wasm.read_var_u32()<span class="question-mark">? </span><span class="kw">as </span>GlobalIdx;
                 <span class="kw">let </span>global = globals
                     .get(global_idx)
@@ -375,7 +351,7 @@
                 }
             }
             <span class="comment">// i32.load [i32] -&gt; [i32]
-            </span><span class="number">0x28 </span>=&gt; {
+            </span>I32_LOAD =&gt; {
                 <span class="kw">let </span>_memarg = MemArg::read_unvalidated(wasm);
 
                 <span class="comment">// TODO check correct `memarg.align`
@@ -386,7 +362,7 @@
                 value_stack.push_back(ValType::NumType(NumType::I32));
             }
             <span class="comment">// i32.store [i32] -&gt; [i32]
-            </span><span class="number">0x36 </span>=&gt; {
+            </span>I32_STORE =&gt; {
                 <span class="kw">let </span>_memarg = MemArg::read_unvalidated(wasm);
 
                 <span class="comment">// TODO check correct `memarg.align`
@@ -397,59 +373,31 @@
                 <span class="comment">// Value to store
                 </span>assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
             }
-            <span class="comment">// i32.add: [i32 i32] -&gt; [i32]
-            </span><span class="number">0x6A </span>=&gt; {
-                <span class="comment">// First value
-                </span>assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
-                <span class="comment">// Second value
-                </span>assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
-
-                value_stack.push_back(ValType::NumType(NumType::I32));
-            }
-            <span class="number">0x6C </span>=&gt; {
-                <span class="comment">// First value
-                </span>assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
-                <span class="comment">// Second value
-                </span>assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
-
-                value_stack.push_back(ValType::NumType(NumType::I32));
-            }
-            <span class="comment">// i32.div_s: [i32 i32] -&gt; [i32]
-            </span><span class="number">0x6D </span>=&gt; {
-                assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
-                assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
-
-                value_stack.push_back(ValType::NumType(NumType::I32));
-            }
-            <span class="comment">// i32.div_u: [i32 i32] -&gt; [i32]
-            </span><span class="number">0x6E </span>=&gt; {
-                assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
-                assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
-
-                value_stack.push_back(ValType::NumType(NumType::I32));
-            }
-            <span class="comment">// i32.rem_s: [i32 i32] -&gt; [i32]
-            </span><span class="number">0x6F </span>=&gt; {
-                assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
-                assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
-
-                value_stack.push_back(ValType::NumType(NumType::I32));
-            }
-            <span class="comment">// i32.rem_u: [i32 i32] -&gt; [i32]
-            </span><span class="number">0x70 </span>=&gt; {
-                assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
-                assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
-
-                value_stack.push_back(ValType::NumType(NumType::I32));
-            }
             <span class="comment">// i32.const: [] -&gt; [i32]
-            </span><span class="number">0x41 </span>=&gt; {
+            </span>I32_CONST =&gt; {
                 <span class="kw">let </span>_num = wasm.read_var_i32()<span class="question-mark">?</span>;
                 value_stack.push_back(ValType::NumType(NumType::I32));
             }
-            other =&gt; {
-                <span class="kw">return </span><span class="prelude-val">Err</span>(Error::InvalidInstr(other));
+            I32_ADD | I32_MUL | I32_DIV_S | I32_DIV_U | I32_REM_S =&gt; {
+                assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
+                assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
+
+                value_stack.push_back(ValType::NumType(NumType::I32));
             }
+            <span class="comment">// i32.clz: [i32] -&gt; [i32]
+            </span>I32_CLZ | I32_CTZ | I32_POPCNT =&gt; {
+                assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
+
+                value_stack.push_back(ValType::NumType(NumType::I32));
+            }
+            I32_REM_U | I32_AND | I32_OR | I32_XOR | I32_SHL | I32_SHR_S | I32_SHR_U | I32_ROTL
+            | I32_ROTR =&gt; {
+                assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
+                assert_pop_value_stack(value_stack, ValType::NumType(NumType::I32))<span class="question-mark">?</span>;
+
+                value_stack.push_back(ValType::NumType(NumType::I32));
+            }
+            <span class="kw">_ </span>=&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::InvalidInstr(first_instr_byte)),
         }
     }
 }

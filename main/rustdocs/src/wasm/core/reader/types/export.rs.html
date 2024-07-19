@@ -77,7 +77,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::execution::assert_validated::UnwrapValidatedExt;
 <span class="kw">use crate</span>::{unreachable_validated, Error, <span class="prelude-ty">Result</span>};
 
-<span class="attr">#[derive(Debug)]
+<span class="attr">#[derive(Debug, Clone)]
 </span><span class="kw">pub struct </span>Export {
     <span class="attr">#[allow(dead_code)]
     </span><span class="kw">pub </span>name: String,
@@ -99,7 +99,7 @@
     }
 }
 
-<span class="attr">#[derive(Debug)]
+<span class="attr">#[derive(Debug, Clone)]
 #[allow(clippy::all)]
 </span><span class="kw">pub enum </span>ExportDesc {
     <span class="attr">#[allow(warnings)]
