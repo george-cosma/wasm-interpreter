@@ -115,6 +115,10 @@
 <a href="#115" id="115">115</a>
 <a href="#116" id="116">116</a>
 <a href="#117" id="117">117</a>
+<a href="#118" id="118">118</a>
+<a href="#119" id="119">119</a>
+<a href="#120" id="120">120</a>
+<a href="#121" id="121">121</a>
 </pre></div><pre class="rust"><code><span class="kw">use </span><span class="kw">crate</span>::core::indices::GlobalIdx;
 <span class="kw">use </span>core::fmt::{Display, Formatter};
 <span class="kw">use </span>core::str::Utf8Error;
@@ -147,6 +151,7 @@
     InvalidImportDesc(u8),
     ExprMissingEnd,
     InvalidInstr(u8),
+    InvalidMultiByteInstr(u8, u8),
     EndInvalidValueStack,
     InvalidLocalIdx,
     InvalidValueStackType(<span class="prelude-ty">Option</span>&lt;ValType&gt;),
@@ -201,6 +206,9 @@
             Error::ExprMissingEnd =&gt; f.write_str(<span class="string">"An expr is missing an end byte"</span>),
             Error::InvalidInstr(byte) =&gt; f.write_fmt(<span class="macro">format_args!</span>(
                 <span class="string">"An invalid instruction opcode was found: `{byte:#x?}`"
+            </span>)),
+            Error::InvalidMultiByteInstr(byte1, byte2) =&gt; f.write_fmt(<span class="macro">format_args!</span>(
+                <span class="string">"An invalid multi-byte instruction opcode was found: `{byte1:#x?} {byte2:#x?}`"
             </span>)),
             Error::EndInvalidValueStack =&gt; f.write_str(
                 <span class="string">"Different value stack types were expected at the end of a block/function."</span>,

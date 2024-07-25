@@ -93,6 +93,8 @@
 <a href="#93" id="93">93</a>
 <a href="#94" id="94">94</a>
 <a href="#95" id="95">95</a>
+<a href="#96" id="96">96</a>
+<a href="#97" id="97">97</a>
 </pre></div><pre class="rust"><code><span class="kw">use </span><span class="kw">crate</span>::core::reader::span::Span;
 <span class="kw">use </span><span class="kw">crate</span>::core::reader::{WasmReadable, WasmReader};
 <span class="kw">use </span><span class="kw">crate</span>::execution::assert_validated::UnwrapValidatedExt;
@@ -169,7 +171,7 @@
     <span class="kw">fn </span>read(wasm: <span class="kw-2">&amp;mut </span>WasmReader) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>&gt; {
         <span class="kw">let </span>ty = SectionTy::read(wasm)<span class="question-mark">?</span>;
         <span class="kw">let </span>size: u32 = wasm.read_var_u32()<span class="question-mark">?</span>;
-        <span class="kw">let </span>contents_span = wasm.make_span(size <span class="kw">as </span>usize);
+        <span class="kw">let </span>contents_span = wasm.make_span(size <span class="kw">as </span>usize)<span class="question-mark">?</span>;
 
         <span class="prelude-val">Ok</span>(SectionHeader {
             ty,
@@ -180,7 +182,9 @@
     <span class="kw">fn </span>read_unvalidated(wasm: <span class="kw-2">&amp;mut </span>WasmReader) -&gt; <span class="self">Self </span>{
         <span class="kw">let </span>ty = SectionTy::read_unvalidated(wasm);
         <span class="kw">let </span>size: u32 = wasm.read_var_u32().unwrap_validated();
-        <span class="kw">let </span>contents_span = wasm.make_span(size <span class="kw">as </span>usize);
+        <span class="kw">let </span>contents_span = wasm
+            .make_span(size <span class="kw">as </span>usize)
+            .expect(<span class="string">"TODO remove this expect"</span>);
 
         SectionHeader {
             ty,

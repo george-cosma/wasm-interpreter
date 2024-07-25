@@ -230,6 +230,8 @@
 <a href="#230" id="230">230</a>
 <a href="#231" id="231">231</a>
 <a href="#232" id="232">232</a>
+<a href="#233" id="233">233</a>
+<a href="#234" id="234">234</a>
 </pre></div><pre class="rust"><code><span class="kw">use </span>alloc::vec;
 <span class="kw">use </span>alloc::vec::Vec;
 <span class="kw">use </span>core::fmt::Debug;
@@ -243,7 +245,7 @@
 /// See &lt;https://webassembly.github.io/spec/core/exec/runtime.html#values&gt;
 </span><span class="comment">// TODO implement missing variants
 </span><span class="attr">#[derive(Clone, Debug, PartialEq)]
-</span><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">enum </span>Value {
+</span><span class="kw">pub enum </span>Value {
     I32(u32),
     I64(u64),
     <span class="comment">// F32,
@@ -253,7 +255,7 @@
 
 <span class="attr">#[derive(Clone, Debug, PartialEq)]
 #[allow(dead_code)]
-</span><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">enum </span>Ref {
+</span><span class="kw">pub enum </span>Ref {
     Null,
     <span class="comment">// Func,
     // Extern,
@@ -462,4 +464,6 @@
 
 <span class="macro">impl_value_conversion!</span>(u32);
 <span class="macro">impl_value_conversion!</span>(i32);
+<span class="macro">impl_value_conversion!</span>(u64);
+<span class="macro">impl_value_conversion!</span>(i64);
 </code></pre></div></section></main></body></html>
