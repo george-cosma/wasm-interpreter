@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["Error","NumType","RefType","RuntimeError","ValType","Value"],"fn":["validate"],"macro":["unreachable_validated"],"mod":["hooks","value","value_stack"],"struct":["RuntimeInstance","ValidationInfo"],"type":["Result"]};
