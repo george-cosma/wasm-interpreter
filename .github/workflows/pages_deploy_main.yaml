@@ -42,6 +42,7 @@ jobs:
       - run: ls -la
       - run: ls -la ./result/*
       - run: whoami
+      - run: sudo chown -R runner:docker ./result
       - run: cp -R ./result ./web && rm -f ./web/index.html
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v4.0.0
