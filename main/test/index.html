@@ -210,10 +210,130 @@ h1 {
             <ul class="toc">
             
                 
-                <li>wasm-interpreter::basic_memory
+                <li>wasm-interpreter
                 <ul>
                     
-                    <li><a href="#d2f91ad2-987a-4456-9823-2147c55ed6a3">basic_memory</a></li>
+                    <li><a href="#6f865e2d-0c9a-405b-99f2-3c137dfdeafc">core::reader::test::move_start_to</a></li>
+                    
+                    <li><a href="#5719d4a0-1803-4cb3-99b5-e96e8bac57ba">core::reader::test::move_start_to_out_of_bounds_2</a></li>
+                    
+                    <li><a href="#1bb417be-65e5-40e3-aaf7-bf6966ca389f">core::reader::test::move_start_to_out_of_bounds_1</a></li>
+                    
+                    <li><a href="#faa8d92a-c8b7-4627-b614-69dc70183d92">core::reader::test::reader_transaction</a></li>
+                    
+                    <li><a href="#1920c7ec-ef8d-4d6c-9975-e3ef3482a76c">core::reader::test::reader_transaction_ergonomics</a></li>
+                    
+                    <li><a href="#b649e49c-a3e4-4ae6-9b66-0af6911bb5e2">core::reader::test::remaining_bytes_1</a></li>
+                    
+                    <li><a href="#e4a1c33d-c7d5-46d4-acff-2d3ee17964d3">core::reader::test::remaining_bytes_2</a></li>
+                    
+                    <li><a href="#0b680e25-1235-4bc2-9924-973ab003ad9a">core::reader::test::skip_1</a></li>
+                    
+                    <li><a href="#e5297fa5-362e-440c-99c7-dfae4988ca7f">core::reader::test::strip_bytes_1</a></li>
+                    
+                    <li><a href="#35e413a7-0dbb-4b7d-a50a-e79085024a8d">core::reader::test::strip_bytes_2</a></li>
+                    
+                    <li><a href="#df25608d-f53e-4784-9344-e98888c4c0d7">core::reader::test::strip_bytes_3</a></li>
+                    
+                    <li><a href="#42db904f-2319-43c2-bc01-e62078b01c84">core::reader::test::strip_bytes_4</a></li>
+                    
+                    <li><a href="#b9e3b80c-2533-4322-b05f-620f0856dfbe">core::reader::types::values::tests::test_var_i32</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>wasm-interpreter::f32
+                <ul>
+                    
+                    <li><a href="#33a7bc1f-e2ca-4edf-8930-4083c287c500">f32_abs</a></li>
+                    
+                    <li><a href="#a8334973-f7a5-4f42-93a3-e04426d7d73a">f32_add</a></li>
+                    
+                    <li><a href="#9c589209-1c66-452b-a67d-85d3734ca8ac">f32_ceil</a></li>
+                    
+                    <li><a href="#bf73cbac-8c4d-4765-8468-714ef5af9f40">f32_const</a></li>
+                    
+                    <li><a href="#885a2ce6-4332-43cf-a4a6-da4a22f25bf5">f32_convert_i32_s</a></li>
+                    
+                    <li><a href="#7286744c-d45c-4ca0-a279-b437c0c9e11d">f32_convert_i32_u</a></li>
+                    
+                    <li><a href="#ff765311-be1b-40e0-a56d-a7d703ee833d">f32_convert_i64_s</a></li>
+                    
+                    <li><a href="#da1c20f1-6ff6-4acb-9790-2b69fc13ab89">f32_convert_i64_u</a></li>
+                    
+                    <li><a href="#12644cee-8de1-45eb-87ca-9b0622005474">f32_copysign</a></li>
+                    
+                    <li><a href="#9b4efcdd-9e00-4c74-93b9-35ad1f7dba97">f32_div</a></li>
+                    
+                    <li><a href="#232c2fbf-16ad-4f1f-a315-cb71bbd21146">f32_eq</a></li>
+                    
+                    <li><a href="#541a1a1b-fa02-416f-996a-10519d96e2e7">f32_floor</a></li>
+                    
+                    <li><a href="#475534d0-f6d0-4e7f-83a3-19d137f5b085">f32_ge</a></li>
+                    
+                    <li><a href="#4946a053-9e59-4325-9404-547a5920d137">f32_gt</a></li>
+                    
+                    <li><a href="#ab814e6c-e5c0-4dfd-8833-04676b5e5efa">f32_le</a></li>
+                    
+                    <li><a href="#954fd1f5-6bf7-4504-b9ba-c24b344885aa">f32_max</a></li>
+                    
+                    <li><a href="#1574a8ef-22d1-491e-982a-618b8b750cc0">f32_lt</a></li>
+                    
+                    <li><a href="#7e9561b8-09cb-4eba-907e-77c12c16c77f">f32_min</a></li>
+                    
+                    <li><a href="#78763bcc-2726-44d9-9970-b5a4f8aebf2e">f32_mul</a></li>
+                    
+                    <li><a href="#d3c0791c-e256-4d7a-8f8f-095c08efe563">f32_ne</a></li>
+                    
+                    <li><a href="#26d9cdc3-8422-42bd-b957-6263951a097d">f32_nearest</a></li>
+                    
+                    <li><a href="#835f084c-32fc-4959-a274-9ad54e1559aa">f32_reinterpret_i32</a></li>
+                    
+                    <li><a href="#d9d9bc1b-df39-4801-a74e-68da9de33a96">f32_sqrt</a></li>
+                    
+                    <li><a href="#77ce3e6f-17f5-421f-8991-521a38ce02ed">f32_neg</a></li>
+                    
+                    <li><a href="#fe406416-34d4-4638-b32d-2d9fa477482a">f32_sub</a></li>
+                    
+                    <li><a href="#79eac5c1-822b-4d16-97ce-5cffa6c7c2d7">f32_trunc</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>wasm-interpreter::i32
+                <ul>
+                    
+                    <li><a href="#45c8e958-34b1-48e8-a4b6-8a24c0fafcfb">i32_eq</a></li>
+                    
+                    <li><a href="#7beea44e-f64d-473e-8c2c-aa1e87ea23e1">i32_eq_panic_first_arg</a></li>
+                    
+                    <li><a href="#ff6bc837-0e14-49e7-9e47-d771aa9d3620">i32_eqz</a></li>
+                    
+                    <li><a href="#1bbc9911-8f0b-4bcc-8ef3-c9c29f25b760">i32_eq_panic_second_arg</a></li>
+                    
+                    <li><a href="#0239c7ce-23d2-4c7b-a72f-d22118165c11">i32_ge_s</a></li>
+                    
+                    <li><a href="#552cfc83-0cd9-4310-81e8-7a512754a331">i32_eqz_panic</a></li>
+                    
+                    <li><a href="#dff07f85-b83b-41ff-89fa-e25360cb00bb">i32_ge_u</a></li>
+                    
+                    <li><a href="#1e9989a5-d04e-4bd6-804d-ab9f52a19a74">i32_gt_s</a></li>
+                    
+                    <li><a href="#7a14700d-38c6-4129-8368-00f3006babd6">i32_le_s</a></li>
+                    
+                    <li><a href="#cd241836-544b-455a-8c70-b48c29e1edd0">i32_gt_u</a></li>
+                    
+                    <li><a href="#fb913dfb-bdfa-42b1-b463-01ef54b1de61">i32_le_u</a></li>
+                    
+                    <li><a href="#6a1a695b-6907-41b1-9fa1-fd8f396c7e14">i32_lt_s</a></li>
+                    
+                    <li><a href="#4888f18a-c328-4d99-b867-bbafe115c268">i32_lt_u</a></li>
+                    
+                    <li><a href="#3b56ef3c-0615-4799-a113-06907550bbca">i32_ne</a></li>
                     
                 </ul>
                 </li>
@@ -223,103 +343,83 @@ h1 {
                 <li>wasm-interpreter::lib
                 <ul>
                     
-                    <li><a href="#7630d9d5-4fd7-479c-808d-fca0fe8a8a7e">arithmetic::bitwise::i32_bitwise_clz</a></li>
+                    <li><a href="#8e10acf5-08e8-4bc7-b9db-e09769e415b0">arithmetic::bitwise::i32_bitwise_and</a></li>
                     
-                    <li><a href="#928c0466-6a38-4a3e-9bdf-06c37e0149e4">arithmetic::bitwise::i32_bitwise_ctz</a></li>
+                    <li><a href="#6d5efdb1-bbd3-4146-ba5b-a10b711e9c3f">arithmetic::bitwise::i32_bitwise_clz</a></li>
                     
-                    <li><a href="#f1a4a32d-a10d-436d-9c6a-5ae363cd918e">arithmetic::bitwise::i32_bitwise_and</a></li>
+                    <li><a href="#a381470b-0c79-4990-a188-66095875bdb2">arithmetic::bitwise::i32_bitwise_ctz</a></li>
                     
-                    <li><a href="#07421044-3ab6-407a-bf0b-7812dffeddc9">arithmetic::bitwise::i32_bitwise_or</a></li>
+                    <li><a href="#e1b8acfc-ca93-4f7e-bfdb-4bc3684d61a5">arithmetic::bitwise::i32_bitwise_or</a></li>
                     
-                    <li><a href="#45392503-5308-4f1a-b2ba-19a99714de1d">arithmetic::bitwise::i32_bitwise_popcnt</a></li>
+                    <li><a href="#db2bf591-e544-44ca-82db-d231c394d1fb">arithmetic::bitwise::i32_bitwise_popcnt</a></li>
                     
-                    <li><a href="#f9be1b00-bc71-4e84-bc9a-cb21dc4483b3">arithmetic::bitwise::i32_bitwise_rotl</a></li>
+                    <li><a href="#587db027-3c99-4fde-ad9c-3799b1fb4c4c">arithmetic::bitwise::i32_bitwise_rotl</a></li>
                     
-                    <li><a href="#055c0e21-3ea9-46e5-a204-6af71eae4e37">arithmetic::bitwise::i32_bitwise_shl</a></li>
+                    <li><a href="#f3a61c78-5bf9-4de7-b0a3-949c077d834d">arithmetic::bitwise::i32_bitwise_rotr</a></li>
                     
-                    <li><a href="#4ed5c09f-40ca-4f2b-86f1-c27738ff6582">arithmetic::bitwise::i32_bitwise_rotr</a></li>
+                    <li><a href="#9ede757b-de6b-4475-8b25-7d071ecd3dbf">arithmetic::bitwise::i32_bitwise_shl</a></li>
                     
-                    <li><a href="#c367bfd2-b956-494e-a26d-b1d53892890b">arithmetic::bitwise::i32_bitwise_shr_s</a></li>
+                    <li><a href="#f64ee29c-ee35-4f33-8289-b2dc5f636ed3">arithmetic::bitwise::i32_bitwise_shr_s</a></li>
                     
-                    <li><a href="#3de636a4-e7ab-4d2d-80e6-7c1d01efd0c2">arithmetic::bitwise::i32_bitwise_shr_u</a></li>
+                    <li><a href="#02a4f810-6327-45a2-a961-534a625ad013">arithmetic::bitwise::i32_bitwise_shr_u</a></li>
                     
-                    <li><a href="#de967312-9fd6-449c-b906-e0205d5c3e34">arithmetic::bitwise::i64_bitwise_and</a></li>
+                    <li><a href="#e8c21ae2-bd07-4f3b-9f7a-ea918f0115c1">arithmetic::bitwise::i32_bitwise_xor</a></li>
                     
-                    <li><a href="#bfda4a0d-1ff8-40a6-9d25-9e695a44d6f0">arithmetic::bitwise::i32_bitwise_xor</a></li>
+                    <li><a href="#8b5eec69-430b-4d23-a684-6b9e35a9cf39">arithmetic::bitwise::i64_bitwise_clz</a></li>
                     
-                    <li><a href="#3aed624d-befd-459f-8db8-8463b2b19a5a">arithmetic::bitwise::i64_bitwise_clz</a></li>
+                    <li><a href="#5d9fe5dd-e0b0-469c-8352-2f46549259aa">arithmetic::bitwise::i64_bitwise_and</a></li>
                     
-                    <li><a href="#7ae5fd19-4254-406e-a7f7-2bc07504136d">arithmetic::bitwise::i64_bitwise_ctz</a></li>
+                    <li><a href="#be31dba7-752c-4351-b0e8-02fd3e587614">arithmetic::bitwise::i64_bitwise_ctz</a></li>
                     
-                    <li><a href="#110d752f-e756-43f4-bbad-7132733528bb">arithmetic::bitwise::i64_bitwise_or</a></li>
+                    <li><a href="#1a257002-9312-4afe-8322-d260baa3e5e6">arithmetic::bitwise::i64_bitwise_or</a></li>
                     
-                    <li><a href="#4c749abf-fccc-4490-9df8-f4c02aee6a00">arithmetic::bitwise::i64_bitwise_popcnt</a></li>
+                    <li><a href="#23712d7d-3492-46c5-a9aa-2d61320fbae4">arithmetic::bitwise::i64_bitwise_popcnt</a></li>
                     
-                    <li><a href="#a6c79be5-c8ac-4114-8687-789cd8c50616">arithmetic::bitwise::i64_bitwise_rotr</a></li>
+                    <li><a href="#2fa4b033-4d0b-41bc-a06d-e747e1d54664">arithmetic::bitwise::i64_bitwise_rotl</a></li>
                     
-                    <li><a href="#e8333528-6fb6-43b0-acfd-a8f0f9a314cf">arithmetic::bitwise::i64_bitwise_rotl</a></li>
+                    <li><a href="#2d3cc223-4473-4dfb-bbfd-9b9d9be55e30">arithmetic::bitwise::i64_bitwise_rotr</a></li>
                     
-                    <li><a href="#af78e943-aef4-4241-a4b1-cd7b970557b1">arithmetic::bitwise::i64_bitwise_shl</a></li>
+                    <li><a href="#8d043f2d-b552-47de-88a2-aaa09674acad">arithmetic::bitwise::i64_bitwise_shr_s</a></li>
                     
-                    <li><a href="#a5afdcdf-2682-40f4-9b0c-ccdd6be18635">arithmetic::bitwise::i64_bitwise_shr_u</a></li>
+                    <li><a href="#8bf7def4-d31a-4e52-9932-ce927779bd30">arithmetic::bitwise::i64_bitwise_shl</a></li>
                     
-                    <li><a href="#d7abb576-561a-44df-a110-7ebe60049ff5">arithmetic::bitwise::i64_bitwise_shr_s</a></li>
+                    <li><a href="#63b41c7b-91c8-4021-b7b1-b9ae38151a0b">arithmetic::bitwise::i64_bitwise_xor</a></li>
                     
-                    <li><a href="#e45f858b-0c38-4d3b-8dca-e8314e985656">arithmetic::bitwise::i64_bitwise_xor</a></li>
+                    <li><a href="#57a018ce-2106-432c-beda-c9d9c826a508">arithmetic::bitwise::i64_bitwise_shr_u</a></li>
                     
-                    <li><a href="#c0af2eff-bee3-467c-b54f-9c4ce47b4680">arithmetic::division::i32_division_signed_panic_result_unrepresentable</a></li>
+                    <li><a href="#401f2ce1-c56d-4a0e-90d2-fa40cc90702f">arithmetic::division::i32_division_signed_panic_dividend_0</a></li>
                     
-                    <li><a href="#e6db6d16-b6d2-4361-b3ba-34bfc92b9a56">arithmetic::division::i32_division_signed_panic_dividend_0</a></li>
+                    <li><a href="#590cf3b3-f877-422c-8016-aaeec7589826">arithmetic::division::i32_division_signed_panic_result_unrepresentable</a></li>
                     
-                    <li><a href="#1e369480-b1ec-497f-8ef6-2b59d28802ce">arithmetic::division::i32_division_signed_simple</a></li>
+                    <li><a href="#2390c274-f7c1-47fa-94b3-5e9bb28dc3ed">arithmetic::division::i32_division_signed_simple</a></li>
                     
-                    <li><a href="#b254bca2-9ba4-42c7-a050-b78342acc6a0">arithmetic::division::i32_division_unsigned_panic_dividend_0</a></li>
+                    <li><a href="#e876541e-269e-447c-8484-0e9f5617fd36">arithmetic::division::i32_division_unsigned_simple</a></li>
                     
-                    <li><a href="#0796f679-8e4a-4217-aa38-4b49f742752d">arithmetic::division::i64_division_signed_simple</a></li>
+                    <li><a href="#1198db1f-33c4-45b9-b104-61ed96a308ba">arithmetic::division::i32_division_unsigned_panic_dividend_0</a></li>
                     
-                    <li><a href="#75c286e1-c924-4ff8-97b9-e910d845200f">arithmetic::division::i32_division_unsigned_simple</a></li>
+                    <li><a href="#ce4f8d32-8a1c-4916-a2d5-7545e21eca99">arithmetic::multiply::i32_multiply</a></li>
                     
-                    <li><a href="#a6fef6d2-a0c1-42aa-9f2d-2538fc609aa7">arithmetic::multiply::i64_multiply</a></li>
+                    <li><a href="#e8da7a87-5e09-4aa2-9e2e-cc9bc89bdfb3">arithmetic::multiply::i64_multiply</a></li>
                     
-                    <li><a href="#a9dce630-13f5-4b6e-9147-2369d9e7edcd">arithmetic::remainder::i32_remainder_signed_simple</a></li>
+                    <li><a href="#d6ddaf55-0be7-4135-84eb-ea286ac803a7">arithmetic::division::i64_division_signed_simple</a></li>
                     
-                    <li><a href="#9d5c1b81-6d42-4146-947d-82238d0e45b6">arithmetic::multiply::i32_multiply</a></li>
+                    <li><a href="#bafd015f-a94a-4113-bb11-3e9ae0080b8a">arithmetic::remainder::i32_remainder_unsigned_panic_dividend_0</a></li>
                     
-                    <li><a href="#adb0ebd0-c6d4-406b-87cb-5b7228ec6a53">arithmetic::remainder::i32_remainder_unsigned_panic_dividend_0</a></li>
+                    <li><a href="#1a37ce22-d868-44b4-b5fe-3a1fad9e7877">arithmetic::remainder::i32_remainder_signed_simple</a></li>
                     
-                    <li><a href="#89cde1f9-5f3e-4941-907d-d46847688615">arithmetic::remainder::i64_remainder_signed_panic_dividend_0</a></li>
+                    <li><a href="#2efc5a03-c8fd-489e-a71e-0b2da42b3678">arithmetic::remainder::i32_remainder_unsigned_simple</a></li>
                     
-                    <li><a href="#90580d04-2243-412b-8712-d983e9a4f80b">arithmetic::remainder::i64_remainder_signed_simple</a></li>
+                    <li><a href="#4dc22add-afad-4cf8-a14d-ac0139f7f9b3">arithmetic::remainder::i64_remainder_signed_panic_dividend_0</a></li>
                     
-                    <li><a href="#1d3feedf-6cd7-4c7f-ab69-cb58dee602cb">arithmetic::remainder::i32_remainder_unsigned_simple</a></li>
+                    <li><a href="#43a2ca5b-abaa-4f19-8973-04eded6a2405">arithmetic::remainder::i64_remainder_unsigned_panic_dividend_0</a></li>
                     
-                    <li><a href="#e3825075-3415-4acf-b20f-92dcd5959b41">arithmetic::remainder::i64_remainder_unsigned_panic_dividend_0</a></li>
+                    <li><a href="#bd69bd01-cdc1-4608-a846-8c23db9eba10">arithmetic::remainder::i64_remainder_unsigned_simple</a></li>
                     
-                    <li><a href="#fcd6ab99-8add-4fa4-9ac7-e188bf779e35">arithmetic::remainder::i64_remainder_unsigned_simple</a></li>
+                    <li><a href="#dd06d3f1-7d11-4729-babd-ad2a4b3fc1e0">arithmetic::remainder::i64_remainder_signed_simple</a></li>
                     
-                    <li><a href="#4d46a7d3-d4f8-4a10-ac88-7df6b407026d">arithmetic::subtraction::i64_subtract</a></li>
+                    <li><a href="#f80e4288-4aed-431c-b763-146e4da0ec37">arithmetic::remainder::remainder_signed_panic_dividend_0</a></li>
                     
-                    <li><a href="#c7f1fe66-6bb7-4628-9f9f-96f079b73300">arithmetic::remainder::remainder_signed_panic_dividend_0</a></li>
-                    
-                </ul>
-                </li>
-                
-            
-                
-                <li>wasm-interpreter::start_function
-                <ul>
-                    
-                    <li><a href="#04cebc26-f3b3-4831-a2c2-ca809776c55d">start_function</a></li>
-                    
-                </ul>
-                </li>
-                
-            
-                
-                <li>wasm-interpreter::dynamic
-                <ul>
-                    
-                    <li><a href="#7cc7d3ad-7f85-4b16-a2c7-3ad5d13a0953">dynamic_add</a></li>
+                    <li><a href="#9379af98-f111-49d2-a005-adbba2055a15">arithmetic::subtraction::i64_subtract</a></li>
                     
                 </ul>
                 </li>
@@ -329,9 +429,19 @@ h1 {
                 <li>wasm-interpreter::add_one
                 <ul>
                     
-                    <li><a href="#6cffb23a-c289-4766-8a39-179ad730c47f">i32_add_one</a></li>
+                    <li><a href="#f9bb7c9c-1423-440e-b375-7dd3112c6115">i32_add_one</a></li>
                     
-                    <li><a href="#65ed3092-04ed-4ce6-a725-7244c15d0e0f">i64_add_one</a></li>
+                    <li><a href="#935823dd-7a24-4ec8-ae74-39298bdb8dd0">i64_add_one</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>wasm-interpreter::start_function
+                <ul>
+                    
+                    <li><a href="#cfd195f2-4606-4b59-9179-e6bde5997366">start_function</a></li>
                     
                 </ul>
                 </li>
@@ -341,37 +451,79 @@ h1 {
                 <li>wasm-interpreter::same_type_fn
                 <ul>
                     
-                    <li><a href="#6ab64d27-dd5f-4a1c-8c8e-7cc4fa1338be">same_type_fn</a></li>
+                    <li><a href="#268e14e7-1ff9-4f4f-89f4-f1994044cce8">same_type_fn</a></li>
                     
                 </ul>
                 </li>
                 
             
                 
-                <li>wasm-interpreter
+                <li>wasm-interpreter::basic_memory
                 <ul>
                     
-                    <li><a href="#53791bad-da6b-4086-a563-f9aaeb06784d">core::reader::test::move_start_to</a></li>
+                    <li><a href="#dd5e4fee-3cae-437b-b35a-dac2b27424db">basic_memory</a></li>
                     
-                    <li><a href="#e9a06ff6-3361-4452-863c-8a47f9b0491e">core::reader::test::move_start_to_out_of_bounds_1</a></li>
+                    <li><a href="#2f3ecd1e-21d8-4597-8dd3-314e80839d5b">f32_basic_memory</a></li>
                     
-                    <li><a href="#f27e6b50-1d4e-4831-af43-168390089d9d">core::reader::test::remaining_bytes_1</a></li>
+                </ul>
+                </li>
+                
+            
+                
+                <li>wasm-interpreter::dynamic
+                <ul>
                     
-                    <li><a href="#b3aa5892-1f0f-4bec-bd7c-5810d14158dd">core::reader::test::move_start_to_out_of_bounds_2</a></li>
+                    <li><a href="#d7554c74-a3b0-4eaa-93f3-e1d64a91c98e">dynamic_add</a></li>
                     
-                    <li><a href="#e8eee0ee-8eee-4da3-875e-1afdf5a37098">core::reader::test::remaining_bytes_2</a></li>
+                </ul>
+                </li>
+                
+            
+                
+                <li>wasm-interpreter::f64
+                <ul>
                     
-                    <li><a href="#92f7c5fb-7878-40c3-b1b2-0603c0d7404f">core::reader::test::strip_bytes_1</a></li>
+                    <li><a href="#10f469c0-03ff-403b-9c3e-0e3ca662bdb9">f64_abs</a></li>
                     
-                    <li><a href="#557e07e2-ef27-4e21-9283-1ab4ab77729e">core::reader::test::skip_1</a></li>
+                    <li><a href="#64ee7b92-41d8-4b9b-94b3-2ce66f06cd86">f64_add</a></li>
                     
-                    <li><a href="#88aa2180-2550-42f7-9e9c-4aac4b244d5a">core::reader::test::strip_bytes_3</a></li>
+                    <li><a href="#f8e63340-c11f-46b8-b3d2-f8dd4a43b83d">f64_const</a></li>
                     
-                    <li><a href="#40b7bcee-faf5-4941-b428-b007906636c5">core::reader::test::strip_bytes_2</a></li>
+                    <li><a href="#fb2f8a44-c7b0-4ff1-86fd-babd0707da27">f64_copysign</a></li>
                     
-                    <li><a href="#9dae30b0-a96b-49a9-96da-679b94ba1c7c">core::reader::test::strip_bytes_4</a></li>
+                    <li><a href="#fa040300-578e-4cb0-8ccd-af52bd7eca7e">f64_ceil</a></li>
                     
-                    <li><a href="#8d734852-c5df-433f-a306-228d4b13a200">core::reader::types::values::tests::test_var_i32</a></li>
+                    <li><a href="#3d6d8679-ce81-430a-9caf-9ba092860a2d">f64_div</a></li>
+                    
+                    <li><a href="#21a190c7-29bd-48a8-8cdc-18dbdd530cba">f64_eq</a></li>
+                    
+                    <li><a href="#03057834-09e9-4350-bc20-10aafb8b949d">f64_floor</a></li>
+                    
+                    <li><a href="#cc0dce57-b57e-4fcf-97c2-1a3184392295">f64_ge</a></li>
+                    
+                    <li><a href="#23e0ba9f-1452-4e34-83e9-c42358c2b2c4">f64_gt</a></li>
+                    
+                    <li><a href="#c50582b4-ea78-46a0-a8e9-d39580ab8c08">f64_le</a></li>
+                    
+                    <li><a href="#00ad38ef-75fc-4f93-94dd-9f82f6c9352e">f64_lt</a></li>
+                    
+                    <li><a href="#87e17494-97ba-40e3-a290-c608dbeaf8b2">f64_max</a></li>
+                    
+                    <li><a href="#600ca32d-1bf5-4ace-947d-c8ce4c3403c8">f64_min</a></li>
+                    
+                    <li><a href="#bd52cb60-b6f4-44ed-bf94-ab76aee4e94b">f64_ne</a></li>
+                    
+                    <li><a href="#68bf649e-2a4a-4b7a-b210-1c3fe8996a5d">f64_nearest</a></li>
+                    
+                    <li><a href="#63f59547-45b1-4ac3-9a6c-0bc8a5539729">f64_mul</a></li>
+                    
+                    <li><a href="#780571e4-b999-47ea-aea0-e5f5b4dc78d8">f64_neg</a></li>
+                    
+                    <li><a href="#ac0b4641-528a-4791-8143-052841b90a1b">f64_sqrt</a></li>
+                    
+                    <li><a href="#76070787-ec8c-496e-aaca-ccf9fd39b7f4">f64_sub</a></li>
+                    
+                    <li><a href="#217d4ed3-5be2-4dd1-89f1-bbd5ca70da14">f64_trunc</a></li>
                     
                 </ul>
                 </li>
@@ -386,6 +538,118 @@ h1 {
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 
             
                 
@@ -474,6 +738,28 @@ h1 {
                     
                     
                     
+                    
+                    
+                
+            
+                
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                    
+                    
+                    
                 
             
                 
@@ -488,15 +774,21 @@ h1 {
                     
                     
                     
-                
-            
-                
                     
                     
                     
-                
-            
-                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -529,8 +821,8 @@ h1 {
 
 
     <div class="testsuite">
-        <h2>Test Suite: wasm-interpreter::basic_memory</h2>
-        <a id="1a2af019-4613-4c26-bbf4-ee3742957c69"></a>
+        <h2>Test Suite: wasm-interpreter</h2>
+        <a id="c2166b4a-a693-4f28-9a62-a710f35a13a0"></a>
         
         
         <h3>Results</h3>
@@ -539,7 +831,7 @@ h1 {
                 <th>Duration</th><td>0.0 sec</td>
             </tr>
             <tr>
-                <th>Tests</th><td>1</td>
+                <th>Tests</th><td>13</td>
             </tr>
             <tr>
                 <th>Failures</th><td>0</td>
@@ -550,13 +842,1221 @@ h1 {
             <h3>Tests</h3>
             
             <div class="testclass">
-                <h4>wasm-interpreter::basic_memory</h4>
+                <h4>wasm-interpreter</h4>
                 <div class="testcases">
                 
                     <div class="test outcome outcome-passed">
-                        <a id="d2f91ad2-987a-4456-9823-2147c55ed6a3"></a>
+                        <a id="6f865e2d-0c9a-405b-99f2-3c137dfdeafc"></a>
                         <table class="proplist">
-                            <tr><th>Test case:</th><td><b>basic_memory</b></td></tr>
+                            <tr><th>Test case:</th><td><b>core::reader::test::move_start_to</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="5719d4a0-1803-4cb3-99b5-e96e8bac57ba"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>core::reader::test::move_start_to_out_of_bounds_2</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="1bb417be-65e5-40e3-aaf7-bf6966ca389f"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>core::reader::test::move_start_to_out_of_bounds_1</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="faa8d92a-c8b7-4627-b614-69dc70183d92"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>core::reader::test::reader_transaction</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="1920c7ec-ef8d-4d6c-9975-e3ef3482a76c"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>core::reader::test::reader_transaction_ergonomics</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="b649e49c-a3e4-4ae6-9b66-0af6911bb5e2"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>core::reader::test::remaining_bytes_1</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="e4a1c33d-c7d5-46d4-acff-2d3ee17964d3"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>core::reader::test::remaining_bytes_2</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="0b680e25-1235-4bc2-9924-973ab003ad9a"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>core::reader::test::skip_1</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="e5297fa5-362e-440c-99c7-dfae4988ca7f"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>core::reader::test::strip_bytes_1</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="35e413a7-0dbb-4b7d-a50a-e79085024a8d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>core::reader::test::strip_bytes_2</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="df25608d-f53e-4784-9344-e98888c4c0d7"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>core::reader::test::strip_bytes_3</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="42db904f-2319-43c2-bc01-e62078b01c84"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>core::reader::test::strip_bytes_4</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="b9e3b80c-2533-4322-b05f-620f0856dfbe"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>core::reader::types::values::tests::test_var_i32</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: wasm-interpreter::f32</h2>
+        <a id="2f03b0b0-4f59-4434-84dc-8b9d2a96cf38"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>26</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>wasm-interpreter::f32</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="33a7bc1f-e2ca-4edf-8930-4083c287c500"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_abs</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="a8334973-f7a5-4f42-93a3-e04426d7d73a"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_add</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="9c589209-1c66-452b-a67d-85d3734ca8ac"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_ceil</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="bf73cbac-8c4d-4765-8468-714ef5af9f40"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_const</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="885a2ce6-4332-43cf-a4a6-da4a22f25bf5"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_convert_i32_s</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="7286744c-d45c-4ca0-a279-b437c0c9e11d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_convert_i32_u</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="ff765311-be1b-40e0-a56d-a7d703ee833d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_convert_i64_s</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="da1c20f1-6ff6-4acb-9790-2b69fc13ab89"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_convert_i64_u</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="12644cee-8de1-45eb-87ca-9b0622005474"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_copysign</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="9b4efcdd-9e00-4c74-93b9-35ad1f7dba97"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_div</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="232c2fbf-16ad-4f1f-a315-cb71bbd21146"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_eq</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="541a1a1b-fa02-416f-996a-10519d96e2e7"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_floor</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="475534d0-f6d0-4e7f-83a3-19d137f5b085"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_ge</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="4946a053-9e59-4325-9404-547a5920d137"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_gt</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="ab814e6c-e5c0-4dfd-8833-04676b5e5efa"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_le</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="954fd1f5-6bf7-4504-b9ba-c24b344885aa"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_max</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="1574a8ef-22d1-491e-982a-618b8b750cc0"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_lt</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="7e9561b8-09cb-4eba-907e-77c12c16c77f"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_min</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="78763bcc-2726-44d9-9970-b5a4f8aebf2e"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_mul</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="d3c0791c-e256-4d7a-8f8f-095c08efe563"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_ne</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="26d9cdc3-8422-42bd-b957-6263951a097d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_nearest</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="835f084c-32fc-4959-a274-9ad54e1559aa"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_reinterpret_i32</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="d9d9bc1b-df39-4801-a74e-68da9de33a96"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_sqrt</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="77ce3e6f-17f5-421f-8991-521a38ce02ed"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_neg</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="fe406416-34d4-4638-b32d-2d9fa477482a"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_sub</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="79eac5c1-822b-4d16-97ce-5cffa6c7c2d7"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f32_trunc</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: wasm-interpreter::i32</h2>
+        <a id="dd4b870d-b260-4d2a-87f2-0865e1305059"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>14</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>wasm-interpreter::i32</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="45c8e958-34b1-48e8-a4b6-8a24c0fafcfb"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>i32_eq</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="7beea44e-f64d-473e-8c2c-aa1e87ea23e1"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>i32_eq_panic_first_arg</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="ff6bc837-0e14-49e7-9e47-d771aa9d3620"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>i32_eqz</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="1bbc9911-8f0b-4bcc-8ef3-c9c29f25b760"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>i32_eq_panic_second_arg</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="0239c7ce-23d2-4c7b-a72f-d22118165c11"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>i32_ge_s</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="552cfc83-0cd9-4310-81e8-7a512754a331"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>i32_eqz_panic</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="dff07f85-b83b-41ff-89fa-e25360cb00bb"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>i32_ge_u</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="1e9989a5-d04e-4bd6-804d-ab9f52a19a74"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>i32_gt_s</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="7a14700d-38c6-4129-8368-00f3006babd6"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>i32_le_s</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="cd241836-544b-455a-8c70-b48c29e1edd0"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>i32_gt_u</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="fb913dfb-bdfa-42b1-b463-01ef54b1de61"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>i32_le_u</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="6a1a695b-6907-41b1-9fa1-fd8f396c7e14"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>i32_lt_s</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="4888f18a-c328-4d99-b867-bbafe115c268"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>i32_lt_u</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="3b56ef3c-0615-4799-a113-06907550bbca"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>i32_ne</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
                             <tr><th>Duration:</th><td>0.005 sec</td></tr>
                         
@@ -584,7 +2084,7 @@ h1 {
 
     <div class="testsuite">
         <h2>Test Suite: wasm-interpreter::lib</h2>
-        <a id="88e5bdd8-b8fb-4c6d-beb4-786cb8dfc47c"></a>
+        <a id="9e971123-231c-4f97-b00e-abd55d445353"></a>
         
         
         <h3>Results</h3>
@@ -608,11 +2108,11 @@ h1 {
                 <div class="testcases">
                 
                     <div class="test outcome outcome-passed">
-                        <a id="7630d9d5-4fd7-479c-808d-fca0fe8a8a7e"></a>
+                        <a id="8e10acf5-08e8-4bc7-b9db-e09769e415b0"></a>
                         <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_clz</b></td></tr>
+                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_and</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
                         
                             <tr><th>Failed</th><td>None</td></tr>
                         
@@ -630,7 +2130,29 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="928c0466-6a38-4a3e-9bdf-06c37e0149e4"></a>
+                        <a id="6d5efdb1-bbd3-4146-ba5b-a10b711e9c3f"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_clz</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="a381470b-0c79-4990-a188-66095875bdb2"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_ctz</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
@@ -652,29 +2174,7 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="f1a4a32d-a10d-436d-9c6a-5ae363cd918e"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_and</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="07421044-3ab6-407a-bf0b-7812dffeddc9"></a>
+                        <a id="e1b8acfc-ca93-4f7e-bfdb-4bc3684d61a5"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_or</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
@@ -696,7 +2196,7 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="45392503-5308-4f1a-b2ba-19a99714de1d"></a>
+                        <a id="db2bf591-e544-44ca-82db-d231c394d1fb"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_popcnt</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
@@ -718,11 +2218,11 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="f9be1b00-bc71-4e84-bc9a-cb21dc4483b3"></a>
+                        <a id="587db027-3c99-4fde-ad9c-3799b1fb4c4c"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_rotl</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
                         
                             <tr><th>Failed</th><td>None</td></tr>
                         
@@ -740,33 +2240,11 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="055c0e21-3ea9-46e5-a204-6af71eae4e37"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_shl</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="4ed5c09f-40ca-4f2b-86f1-c27738ff6582"></a>
+                        <a id="f3a61c78-5bf9-4de7-b0a3-949c077d834d"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_rotr</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
                         
                             <tr><th>Failed</th><td>None</td></tr>
                         
@@ -784,7 +2262,29 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="c367bfd2-b956-494e-a26d-b1d53892890b"></a>
+                        <a id="9ede757b-de6b-4475-8b25-7d071ecd3dbf"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_shl</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="f64ee29c-ee35-4f33-8289-b2dc5f636ed3"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_shr_s</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
@@ -806,53 +2306,9 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="3de636a4-e7ab-4d2d-80e6-7c1d01efd0c2"></a>
+                        <a id="02a4f810-6327-45a2-a961-534a625ad013"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_shr_u</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="de967312-9fd6-449c-b906-e0205d5c3e34"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_and</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="bfda4a0d-1ff8-40a6-9d25-9e695a44d6f0"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_xor</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
                             <tr><th>Duration:</th><td>0.006 sec</td></tr>
                         
@@ -872,9 +2328,9 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="3aed624d-befd-459f-8db8-8463b2b19a5a"></a>
+                        <a id="e8c21ae2-bd07-4f3b-9f7a-ea918f0115c1"></a>
                         <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_clz</b></td></tr>
+                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i32_bitwise_xor</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
                             <tr><th>Duration:</th><td>0.005 sec</td></tr>
                         
@@ -894,7 +2350,51 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="7ae5fd19-4254-406e-a7f7-2bc07504136d"></a>
+                        <a id="8b5eec69-430b-4d23-a684-6b9e35a9cf39"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_clz</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="5d9fe5dd-e0b0-469c-8352-2f46549259aa"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_and</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="be31dba7-752c-4351-b0e8-02fd3e587614"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_ctz</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
@@ -916,7 +2416,7 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="110d752f-e756-43f4-bbad-7132733528bb"></a>
+                        <a id="1a257002-9312-4afe-8322-d260baa3e5e6"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_or</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
@@ -938,9 +2438,31 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="4c749abf-fccc-4490-9df8-f4c02aee6a00"></a>
+                        <a id="23712d7d-3492-46c5-a9aa-2d61320fbae4"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_popcnt</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="2fa4b033-4d0b-41bc-a06d-e747e1d54664"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_rotl</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
                             <tr><th>Duration:</th><td>0.006 sec</td></tr>
                         
@@ -960,7 +2482,7 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="a6c79be5-c8ac-4114-8687-789cd8c50616"></a>
+                        <a id="2d3cc223-4473-4dfb-bbfd-9b9d9be55e30"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_rotr</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
@@ -982,77 +2504,11 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="e8333528-6fb6-43b0-acfd-a8f0f9a314cf"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_rotl</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="af78e943-aef4-4241-a4b1-cd7b970557b1"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_shl</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="a5afdcdf-2682-40f4-9b0c-ccdd6be18635"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_shr_u</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="d7abb576-561a-44df-a110-7ebe60049ff5"></a>
+                        <a id="8d043f2d-b552-47de-88a2-aaa09674acad"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_shr_s</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
                         
                             <tr><th>Failed</th><td>None</td></tr>
                         
@@ -1070,32 +2526,32 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="e45f858b-0c38-4d3b-8dca-e8314e985656"></a>
+                        <a id="8bf7def4-d31a-4e52-9932-ce927779bd30"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_shl</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="63b41c7b-91c8-4021-b7b1-b9ae38151a0b"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_xor</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="c0af2eff-bee3-467c-b54f-9c4ce47b4680"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::division::i32_division_signed_panic_result_unrepresentable</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
                             <tr><th>Duration:</th><td>0.005 sec</td></tr>
                         
                             <tr><th>Failed</th><td>None</td></tr>
@@ -1114,141 +2570,31 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="e6db6d16-b6d2-4361-b3ba-34bfc92b9a56"></a>
+                        <a id="57a018ce-2106-432c-beda-c9d9c826a508"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::bitwise::i64_bitwise_shr_u</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="401f2ce1-c56d-4a0e-90d2-fa40cc90702f"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::division::i32_division_signed_panic_dividend_0</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="1e369480-b1ec-497f-8ef6-2b59d28802ce"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::division::i32_division_signed_simple</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="b254bca2-9ba4-42c7-a050-b78342acc6a0"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::division::i32_division_unsigned_panic_dividend_0</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="0796f679-8e4a-4217-aa38-4b49f742752d"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::division::i64_division_signed_simple</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="75c286e1-c924-4ff8-97b9-e910d845200f"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::division::i32_division_unsigned_simple</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="a6fef6d2-a0c1-42aa-9f2d-2538fc609aa7"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::multiply::i64_multiply</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="a9dce630-13f5-4b6e-9147-2369d9e7edcd"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::remainder::i32_remainder_signed_simple</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
                             <tr><th>Duration:</th><td>0.004 sec</td></tr>
                         
@@ -1268,31 +2614,9 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="9d5c1b81-6d42-4146-947d-82238d0e45b6"></a>
+                        <a id="590cf3b3-f877-422c-8016-aaeec7589826"></a>
                         <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::multiply::i32_multiply</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="adb0ebd0-c6d4-406b-87cb-5b7228ec6a53"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::remainder::i32_remainder_unsigned_panic_dividend_0</b></td></tr>
+                            <tr><th>Test case:</th><td><b>arithmetic::division::i32_division_signed_panic_result_unrepresentable</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
                             <tr><th>Duration:</th><td>0.006 sec</td></tr>
                         
@@ -1312,7 +2636,205 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="89cde1f9-5f3e-4941-907d-d46847688615"></a>
+                        <a id="2390c274-f7c1-47fa-94b3-5e9bb28dc3ed"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::division::i32_division_signed_simple</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="e876541e-269e-447c-8484-0e9f5617fd36"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::division::i32_division_unsigned_simple</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="1198db1f-33c4-45b9-b104-61ed96a308ba"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::division::i32_division_unsigned_panic_dividend_0</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="ce4f8d32-8a1c-4916-a2d5-7545e21eca99"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::multiply::i32_multiply</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="e8da7a87-5e09-4aa2-9e2e-cc9bc89bdfb3"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::multiply::i64_multiply</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="d6ddaf55-0be7-4135-84eb-ea286ac803a7"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::division::i64_division_signed_simple</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="bafd015f-a94a-4113-bb11-3e9ae0080b8a"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::remainder::i32_remainder_unsigned_panic_dividend_0</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="1a37ce22-d868-44b4-b5fe-3a1fad9e7877"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::remainder::i32_remainder_signed_simple</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="2efc5a03-c8fd-489e-a71e-0b2da42b3678"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::remainder::i32_remainder_unsigned_simple</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="4dc22add-afad-4cf8-a14d-ac0139f7f9b3"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::remainder::i64_remainder_signed_panic_dividend_0</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
@@ -1334,51 +2856,7 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="90580d04-2243-412b-8712-d983e9a4f80b"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::remainder::i64_remainder_signed_simple</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="1d3feedf-6cd7-4c7f-ab69-cb58dee602cb"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::remainder::i32_remainder_unsigned_simple</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="e3825075-3415-4acf-b20f-92dcd5959b41"></a>
+                        <a id="43a2ca5b-abaa-4f19-8973-04eded6a2405"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::remainder::i64_remainder_unsigned_panic_dividend_0</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
@@ -1400,11 +2878,11 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="fcd6ab99-8add-4fa4-9ac7-e188bf779e35"></a>
+                        <a id="bd69bd01-cdc1-4608-a846-8c23db9eba10"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::remainder::i64_remainder_unsigned_simple</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
                         
                             <tr><th>Failed</th><td>None</td></tr>
                         
@@ -1422,141 +2900,55 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="4d46a7d3-d4f8-4a10-ac88-7df6b407026d"></a>
+                        <a id="dd06d3f1-7d11-4729-babd-ad2a4b3fc1e0"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::remainder::i64_remainder_signed_simple</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="f80e4288-4aed-431c-b763-146e4da0ec37"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>arithmetic::remainder::remainder_signed_panic_dividend_0</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="9379af98-f111-49d2-a005-adbba2055a15"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>arithmetic::subtraction::i64_subtract</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
                             <tr><th>Duration:</th><td>0.005 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="c7f1fe66-6bb7-4628-9f9f-96f079b73300"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>arithmetic::remainder::remainder_signed_panic_dividend_0</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                </div>
-            </div>
-            
-        </div>
-    </div>
-    
-
-    <div class="testsuite">
-        <h2>Test Suite: wasm-interpreter::start_function</h2>
-        <a id="5e036fcd-8775-4f3d-b8ba-4e985563831a"></a>
-        
-        
-        <h3>Results</h3>
-        <table class="proplist">
-            <tr>
-                <th>Duration</th><td>0.0 sec</td>
-            </tr>
-            <tr>
-                <th>Tests</th><td>1</td>
-            </tr>
-            <tr>
-                <th>Failures</th><td>0</td>
-            </tr>
-        </table>
-
-        <div class="testclasses">
-            <h3>Tests</h3>
-            
-            <div class="testclass">
-                <h4>wasm-interpreter::start_function</h4>
-                <div class="testcases">
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="04cebc26-f3b3-4831-a2c2-ca809776c55d"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>start_function</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                </div>
-            </div>
-            
-        </div>
-    </div>
-    
-
-    <div class="testsuite">
-        <h2>Test Suite: wasm-interpreter::dynamic</h2>
-        <a id="a187c1f3-bf8c-4912-9f6a-a488eea60e96"></a>
-        
-        
-        <h3>Results</h3>
-        <table class="proplist">
-            <tr>
-                <th>Duration</th><td>0.0 sec</td>
-            </tr>
-            <tr>
-                <th>Tests</th><td>1</td>
-            </tr>
-            <tr>
-                <th>Failures</th><td>0</td>
-            </tr>
-        </table>
-
-        <div class="testclasses">
-            <h3>Tests</h3>
-            
-            <div class="testclass">
-                <h4>wasm-interpreter::dynamic</h4>
-                <div class="testcases">
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="7cc7d3ad-7f85-4b16-a2c7-3ad5d13a0953"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>dynamic_add</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
                         
                             <tr><th>Failed</th><td>None</td></tr>
                         
@@ -1582,7 +2974,7 @@ h1 {
 
     <div class="testsuite">
         <h2>Test Suite: wasm-interpreter::add_one</h2>
-        <a id="ddc5a031-a995-4c35-a3a9-5693b19e5385"></a>
+        <a id="0df20200-00a8-46c2-ad5b-730fa97a950d"></a>
         
         
         <h3>Results</h3>
@@ -1606,11 +2998,11 @@ h1 {
                 <div class="testcases">
                 
                     <div class="test outcome outcome-passed">
-                        <a id="6cffb23a-c289-4766-8a39-179ad730c47f"></a>
+                        <a id="f9bb7c9c-1423-440e-b375-7dd3112c6115"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>i32_add_one</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
                         
                             <tr><th>Failed</th><td>None</td></tr>
                         
@@ -1628,7 +3020,7 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="65ed3092-04ed-4ce6-a725-7244c15d0e0f"></a>
+                        <a id="935823dd-7a24-4ec8-ae74-39298bdb8dd0"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>i64_add_one</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
@@ -1657,8 +3049,62 @@ h1 {
     
 
     <div class="testsuite">
+        <h2>Test Suite: wasm-interpreter::start_function</h2>
+        <a id="8c3a6785-ec2b-4d5a-a252-06dfdc0f672d"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>1</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>wasm-interpreter::start_function</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="cfd195f2-4606-4b59-9179-e6bde5997366"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>start_function</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
         <h2>Test Suite: wasm-interpreter::same_type_fn</h2>
-        <a id="37f9344a-750c-4883-8144-112a6a61139d"></a>
+        <a id="212b825b-6798-4c2e-991f-104db2d18333"></a>
         
         
         <h3>Results</h3>
@@ -1682,7 +3128,7 @@ h1 {
                 <div class="testcases">
                 
                     <div class="test outcome outcome-passed">
-                        <a id="6ab64d27-dd5f-4a1c-8c8e-7cc4fa1338be"></a>
+                        <a id="268e14e7-1ff9-4f4f-89f4-f1994044cce8"></a>
                         <table class="proplist">
                             <tr><th>Test case:</th><td><b>same_type_fn</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
@@ -1711,8 +3157,8 @@ h1 {
     
 
     <div class="testsuite">
-        <h2>Test Suite: wasm-interpreter</h2>
-        <a id="595fcaac-32c7-49e8-8c57-6aa5eed408a3"></a>
+        <h2>Test Suite: wasm-interpreter::basic_memory</h2>
+        <a id="4f6df9fd-64bf-48c9-bcd0-c3fed35515b7"></a>
         
         
         <h3>Results</h3>
@@ -1721,7 +3167,7 @@ h1 {
                 <th>Duration</th><td>0.0 sec</td>
             </tr>
             <tr>
-                <th>Tests</th><td>11</td>
+                <th>Tests</th><td>2</td>
             </tr>
             <tr>
                 <th>Failures</th><td>0</td>
@@ -1732,79 +3178,13 @@ h1 {
             <h3>Tests</h3>
             
             <div class="testclass">
-                <h4>wasm-interpreter</h4>
+                <h4>wasm-interpreter::basic_memory</h4>
                 <div class="testcases">
                 
                     <div class="test outcome outcome-passed">
-                        <a id="53791bad-da6b-4086-a563-f9aaeb06784d"></a>
+                        <a id="dd5e4fee-3cae-437b-b35a-dac2b27424db"></a>
                         <table class="proplist">
-                            <tr><th>Test case:</th><td><b>core::reader::test::move_start_to</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="e9a06ff6-3361-4452-863c-8a47f9b0491e"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>core::reader::test::move_start_to_out_of_bounds_1</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="f27e6b50-1d4e-4831-af43-168390089d9d"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>core::reader::test::remaining_bytes_1</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="b3aa5892-1f0f-4bec-bd7c-5810d14158dd"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>core::reader::test::move_start_to_out_of_bounds_2</b></td></tr>
+                            <tr><th>Test case:</th><td><b>basic_memory</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
                             <tr><th>Duration:</th><td>0.006 sec</td></tr>
                         
@@ -1824,9 +3204,63 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="e8eee0ee-8eee-4da3-875e-1afdf5a37098"></a>
+                        <a id="2f3ecd1e-21d8-4597-8dd3-314e80839d5b"></a>
                         <table class="proplist">
-                            <tr><th>Test case:</th><td><b>core::reader::test::remaining_bytes_2</b></td></tr>
+                            <tr><th>Test case:</th><td><b>f32_basic_memory</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: wasm-interpreter::dynamic</h2>
+        <a id="9733c69b-2212-4090-a4c0-02975e65d20a"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>1</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>wasm-interpreter::dynamic</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="d7554c74-a3b0-4eaa-93f3-e1d64a91c98e"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>dynamic_add</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
                             <tr><th>Duration:</th><td>0.004 sec</td></tr>
                         
@@ -1845,12 +3279,44 @@ h1 {
                         
                     </div>
                 
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: wasm-interpreter::f64</h2>
+        <a id="bf23333e-229e-4b07-bda6-b66b347bed9d"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>21</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>wasm-interpreter::f64</h4>
+                <div class="testcases">
+                
                     <div class="test outcome outcome-passed">
-                        <a id="92f7c5fb-7878-40c3-b1b2-0603c0d7404f"></a>
+                        <a id="10f469c0-03ff-403b-9c3e-0e3ca662bdb9"></a>
                         <table class="proplist">
-                            <tr><th>Test case:</th><td><b>core::reader::test::strip_bytes_1</b></td></tr>
+                            <tr><th>Test case:</th><td><b>f64_abs</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
                         
                             <tr><th>Failed</th><td>None</td></tr>
                         
@@ -1868,99 +3334,429 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="557e07e2-ef27-4e21-9283-1ab4ab77729e"></a>
+                        <a id="64ee7b92-41d8-4b9b-94b3-2ce66f06cd86"></a>
                         <table class="proplist">
-                            <tr><th>Test case:</th><td><b>core::reader::test::skip_1</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="88aa2180-2550-42f7-9e9c-4aac4b244d5a"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>core::reader::test::strip_bytes_3</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="40b7bcee-faf5-4941-b428-b007906636c5"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>core::reader::test::strip_bytes_2</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="9dae30b0-a96b-49a9-96da-679b94ba1c7c"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>core::reader::test::strip_bytes_4</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="8d734852-c5df-433f-a306-228d4b13a200"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>core::reader::types::values::tests::test_var_i32</b></td></tr>
+                            <tr><th>Test case:</th><td><b>f64_add</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
                             <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="f8e63340-c11f-46b8-b3d2-f8dd4a43b83d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_const</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="fb2f8a44-c7b0-4ff1-86fd-babd0707da27"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_copysign</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="fa040300-578e-4cb0-8ccd-af52bd7eca7e"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_ceil</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="3d6d8679-ce81-430a-9caf-9ba092860a2d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_div</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="21a190c7-29bd-48a8-8cdc-18dbdd530cba"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_eq</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="03057834-09e9-4350-bc20-10aafb8b949d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_floor</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="cc0dce57-b57e-4fcf-97c2-1a3184392295"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_ge</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="23e0ba9f-1452-4e34-83e9-c42358c2b2c4"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_gt</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="c50582b4-ea78-46a0-a8e9-d39580ab8c08"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_le</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="00ad38ef-75fc-4f93-94dd-9f82f6c9352e"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_lt</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="87e17494-97ba-40e3-a290-c608dbeaf8b2"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_max</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="600ca32d-1bf5-4ace-947d-c8ce4c3403c8"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_min</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="bd52cb60-b6f4-44ed-bf94-ab76aee4e94b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_ne</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="68bf649e-2a4a-4b7a-b210-1c3fe8996a5d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_nearest</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="63f59547-45b1-4ac3-9a6c-0bc8a5539729"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_mul</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="780571e4-b999-47ea-aea0-e5f5b4dc78d8"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_neg</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.004 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="ac0b4641-528a-4791-8143-052841b90a1b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_sqrt</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.005 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="76070787-ec8c-496e-aaca-ccf9fd39b7f4"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_sub</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.006 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="217d4ed3-5be2-4dd1-89f1-bbd5ca70da14"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>f64_trunc</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.007 sec</td></tr>
                         
                             <tr><th>Failed</th><td>None</td></tr>
                         

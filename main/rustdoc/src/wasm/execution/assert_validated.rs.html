@@ -26,6 +26,10 @@
 <a href="#24" id="24">24</a>
 <a href="#25" id="25">25</a>
 <a href="#26" id="26">26</a>
+<a href="#27" id="27">27</a>
+<a href="#28" id="28">28</a>
+<a href="#29" id="29">29</a>
+<a href="#30" id="30">30</a>
 </pre></div><pre class="rust"><code><span class="doccomment">//! Helpers for assertions due to prior validation of a WASM program.
 
 </span><span class="kw">use </span>core::fmt::Debug;
@@ -35,14 +39,18 @@
 }
 
 <span class="kw">impl</span>&lt;T&gt; UnwrapValidatedExt&lt;T&gt; <span class="kw">for </span><span class="prelude-ty">Option</span>&lt;T&gt; {
-    <span class="kw">fn </span>unwrap_validated(<span class="self">self</span>) -&gt; T {
-        <span class="self">self</span>.expect(<span class="string">"this to be `Some` because of prior validation"</span>)
+    <span class="doccomment">/// Indicate that we can assume this Option to be Some(_) due to prior validation
+    </span><span class="kw">fn </span>unwrap_validated(<span class="self">self</span>) -&gt; T {
+        <span class="self">self</span>.expect(<span class="string">"Validation guarantees this to be `Some(_)`, but it is `None`"</span>)
     }
 }
 
 <span class="kw">impl</span>&lt;T, E: Debug&gt; UnwrapValidatedExt&lt;T&gt; <span class="kw">for </span><span class="prelude-ty">Result</span>&lt;T, E&gt; {
-    <span class="kw">fn </span>unwrap_validated(<span class="self">self</span>) -&gt; T {
-        <span class="self">self</span>.expect(<span class="string">"this to be `Ok` because of prior validation"</span>)
+    <span class="doccomment">/// Indicate that we can assume this Result to be Ok(_) due to prior validation
+    </span><span class="kw">fn </span>unwrap_validated(<span class="self">self</span>) -&gt; T {
+        <span class="self">self</span>.unwrap_or_else(|e| {
+            <span class="macro">panic!</span>(<span class="string">"Validation guarantees this to be `Ok(_)`, but it is `Err({e:?})`"</span>);
+        })
     }
 }
 

@@ -18,11 +18,7 @@
 <a href="#16" id="16">16</a>
 <a href="#17" id="17">17</a>
 <a href="#18" id="18">18</a>
-<a href="#19" id="19">19</a>
-<a href="#20" id="20">20</a>
-</pre></div><pre class="rust"><code><span class="kw">use </span><span class="kw">super</span>::RuntimeInstance;
-
-<span class="doccomment">/// Trait that allows user specified hooks for various events during interpretation
+</pre></div><pre class="rust"><code><span class="doccomment">/// Trait that allows user specified hooks for various events during interpretation
 ///
 /// The default implementation of all trait methods are empty, i. e. can be optimized out fully.
 </span><span class="comment">// It mus always be checked that there is no performance penalty for an empty hook!
@@ -32,7 +28,7 @@
     /// This allows the most intricate insight into the interpreters behavior, at the cost of a
     /// hefty performance penalty
     </span><span class="attr">#[allow(unused_variables)]
-    </span><span class="kw">fn </span>instruction_hook(interpreter_state: <span class="kw-2">&amp;mut </span>RuntimeInstance&lt;<span class="self">Self</span>&gt;) {}
+    </span><span class="kw">fn </span>instruction_hook(<span class="kw-2">&amp;mut </span><span class="self">self</span>, bytecode: <span class="kw-2">&amp;</span>[u8], pc: usize) {}
 }
 
 <span class="doccomment">/// Default implementation of a hookset, with all hooks empty

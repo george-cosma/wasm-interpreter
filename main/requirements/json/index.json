@@ -2,7 +2,7 @@
     "_COMMENT": "Fields with _ are metadata. Fields without _ are the actual document/section/requirement/other content.",
     "DOCUMENTS": [
         {
-            "TITLE": "Wasm Safety Interpreter requirements",
+            "TITLE": "WASM Interpreter for Safety - Requirements",
             "REQ_PREFIX": null,
             "GRAMMAR": {
                 "ELEMENTS": [
@@ -119,11 +119,20 @@
                         },
                         {
                             "_TOC": "1.5",
+                            "TYPE": "REQUIREMENT",
+                            "UID": "REQ-14",
+                            "TITLE": "No Dependencies",
+                            "STATEMENT": "No dependencies but those explicitly allowed by a requirement shall be used\n",
+                            "RATIONALE": "Dependencies have to forego the full V&V process as well, which quickly adds enormous work.\n",
+                            "COMMENT": "All requirements that allow a dependency must specify the exact version of the dependency (at least major, minor and patch release)\n"
+                        },
+                        {
+                            "_TOC": "1.6",
                             "TYPE": "SECTION",
                             "TITLE": "Low-Level Functional Requirements",
                             "NODES": [
                                 {
-                                    "_TOC": "1.5.1",
+                                    "_TOC": "1.6.1",
                                     "TYPE": "REQUIREMENT",
                                     "UID": "REQ-2",
                                     "TITLE": "Stackless",
@@ -137,7 +146,7 @@
                                     ]
                                 },
                                 {
-                                    "_TOC": "1.5.2",
+                                    "_TOC": "1.6.2",
                                     "TYPE": "REQUIREMENT",
                                     "UID": "REQ-4",
                                     "TITLE": "no_std",
@@ -152,7 +161,7 @@
                                     ]
                                 },
                                 {
-                                    "_TOC": "1.5.3",
+                                    "_TOC": "1.6.3",
                                     "TYPE": "REQUIREMENT",
                                     "UID": "REQ-6",
                                     "TITLE": "Fuel",
@@ -166,7 +175,7 @@
                                     ]
                                 },
                                 {
-                                    "_TOC": "1.5.4",
+                                    "_TOC": "1.6.4",
                                     "TYPE": "REQUIREMENT",
                                     "UID": "REQ-13",
                                     "TITLE": "De-/Serializable",
@@ -178,6 +187,42 @@
                                             "VALUE": "REQ-12"
                                         }
                                     ]
+                                },
+                                {
+                                    "_TOC": "1.6.5",
+                                    "TYPE": "REQUIREMENT",
+                                    "UID": "REQ-15",
+                                    "TITLE": "Allow log dependency",
+                                    "STATEMENT": "The interpreter shall have an optional dependency on the ``log`` crate version ``0.4.22``\n",
+                                    "RATIONALE": "Logging is an essential tool to make a system observable, and aid in debugging. Bespoke crate is widely used in the Rust ecosystem and can be attached to any (or no) logging backend. Using conditional compilation, all of the ``log`` crate's footprint in the WASM interpreter (foremost the ``debug``, ``error``, ``info``, ``trace`` and ``warn`` macro) can be expanded to empty statements to avoid **any** run-time impact when opting out of the dependency on ``log``.\n",
+                                    "RELATIONS": [
+                                        {
+                                            "TYPE": "Parent",
+                                            "VALUE": "REQ-14"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_TOC": "1.6.6",
+                                    "TYPE": "REQUIREMENT",
+                                    "UID": "REQ-16",
+                                    "TITLE": "Allow libm dependency",
+                                    "STATEMENT": "The interpreter may depend on the ``libm`` crate version ``0.2.8``\n",
+                                    "RATIONALE": "Rust does not expose all floating point operations in a bare-metal (as in ``no_std``) target, as to not introduce any dependency on the C standard library's ``libm`` (respective PR: https://github.com/rust-lang/rust/pull/27823). However, we identified at least the following operations to be required for WASM interpretation while unavailable in ``no_std``:\n\n- ``abs``\n- ``ceil``\n- ``floor``\n- ``trunc``\n- ``round``\n- ``sqrt``\n- ``copysign``\n\nIn order use these operations, having the ``libm`` crate as dependencies of the WASM interpreter is an acceptable trade-off.\n",
+                                    "RELATIONS": [
+                                        {
+                                            "TYPE": "Parent",
+                                            "VALUE": "REQ-14"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_TOC": "1.6.7",
+                                    "TYPE": "REQUIREMENT",
+                                    "UID": "REQ-17",
+                                    "TITLE": "Minimum Supported Rust Version (MSRV)",
+                                    "STATEMENT": "The interpreter shall compile on Rust ``1.76.0`` and later versions\n",
+                                    "RATIONALE": "An MSRV should be clearly stated to specify which toolchain is acceptable.\n"
                                 }
                             ]
                         }

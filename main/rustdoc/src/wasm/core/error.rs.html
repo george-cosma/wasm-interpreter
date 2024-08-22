@@ -121,6 +121,20 @@
 <a href="#119" id="119">119</a>
 <a href="#120" id="120">120</a>
 <a href="#121" id="121">121</a>
+<a href="#122" id="122">122</a>
+<a href="#123" id="123">123</a>
+<a href="#124" id="124">124</a>
+<a href="#125" id="125">125</a>
+<a href="#126" id="126">126</a>
+<a href="#127" id="127">127</a>
+<a href="#128" id="128">128</a>
+<a href="#129" id="129">129</a>
+<a href="#130" id="130">130</a>
+<a href="#131" id="131">131</a>
+<a href="#132" id="132">132</a>
+<a href="#133" id="133">133</a>
+<a href="#134" id="134">134</a>
+<a href="#135" id="135">135</a>
 </pre></div><pre class="rust"><code><span class="kw">use </span><span class="kw">crate</span>::core::indices::GlobalIdx;
 <span class="kw">use </span>core::fmt::{Display, Formatter};
 <span class="kw">use </span>core::str::Utf8Error;
@@ -133,6 +147,7 @@
     DivideBy0,
     UnrepresentableResult,
     FunctionNotFound,
+    StackSmash,
 }
 
 <span class="attr">#[derive(Debug, PartialEq, Eq, Clone)]
@@ -232,14 +247,27 @@
                 <span class="string">"An invalid global index `{idx}` was specified"
             </span>)),
             Error::GlobalIsConst =&gt; f.write_str(<span class="string">"A const global cannot be written to"</span>),
-            Error::RuntimeError(err) =&gt; <span class="kw">match </span>err {
-                RuntimeError::DivideBy0 =&gt; f.write_str(<span class="string">"Divide by zero is not permitted"</span>),
-                RuntimeError::UnrepresentableResult =&gt; f.write_str(<span class="string">"Result is unrepresentable"</span>),
-                RuntimeError::FunctionNotFound =&gt; f.write_str(<span class="string">"Function not found"</span>),
-            },
+            Error::RuntimeError(err) =&gt; err.fmt(f),
+        }
+    }
+}
+
+<span class="kw">impl </span>Display <span class="kw">for </span>RuntimeError {
+    <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>Formatter&lt;<span class="lifetime">'_</span>&gt;) -&gt; core::fmt::Result {
+        <span class="kw">match </span><span class="self">self </span>{
+            RuntimeError::DivideBy0 =&gt; f.write_str(<span class="string">"Divide by zero is not permitted"</span>),
+            RuntimeError::UnrepresentableResult =&gt; f.write_str(<span class="string">"Result is unrepresentable"</span>),
+            RuntimeError::FunctionNotFound =&gt; f.write_str(<span class="string">"Function not found"</span>),
+            RuntimeError::StackSmash =&gt; f.write_str(<span class="string">"Stack smashed"</span>),
         }
     }
 }
 
 <span class="kw">pub type </span><span class="prelude-ty">Result</span>&lt;T&gt; = core::result::Result&lt;T, Error&gt;;
+
+<span class="kw">impl </span>From&lt;RuntimeError&gt; <span class="kw">for </span>Error {
+    <span class="kw">fn </span>from(value: RuntimeError) -&gt; <span class="self">Self </span>{
+        <span class="self">Self</span>::RuntimeError(value)
+    }
+}
 </code></pre></div></section></main></body></html>
