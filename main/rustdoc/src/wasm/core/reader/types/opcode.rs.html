@@ -107,10 +107,50 @@
 <a href="#105" id="105">105</a>
 <a href="#106" id="106">106</a>
 <a href="#107" id="107">107</a>
-</pre></div><pre class="rust"><code><span class="kw">pub const </span>NOP: u8 = <span class="number">0x01</span>;
+<a href="#108" id="108">108</a>
+<a href="#109" id="109">109</a>
+<a href="#110" id="110">110</a>
+<a href="#111" id="111">111</a>
+<a href="#112" id="112">112</a>
+<a href="#113" id="113">113</a>
+<a href="#114" id="114">114</a>
+<a href="#115" id="115">115</a>
+<a href="#116" id="116">116</a>
+<a href="#117" id="117">117</a>
+<a href="#118" id="118">118</a>
+<a href="#119" id="119">119</a>
+<a href="#120" id="120">120</a>
+<a href="#121" id="121">121</a>
+<a href="#122" id="122">122</a>
+<a href="#123" id="123">123</a>
+<a href="#124" id="124">124</a>
+<a href="#125" id="125">125</a>
+<a href="#126" id="126">126</a>
+<a href="#127" id="127">127</a>
+<a href="#128" id="128">128</a>
+<a href="#129" id="129">129</a>
+<a href="#130" id="130">130</a>
+<a href="#131" id="131">131</a>
+<a href="#132" id="132">132</a>
+<a href="#133" id="133">133</a>
+<a href="#134" id="134">134</a>
+<a href="#135" id="135">135</a>
+<a href="#136" id="136">136</a>
+<a href="#137" id="137">137</a>
+<a href="#138" id="138">138</a>
+<a href="#139" id="139">139</a>
+<a href="#140" id="140">140</a>
+<a href="#141" id="141">141</a>
+<a href="#142" id="142">142</a>
+<a href="#143" id="143">143</a>
+</pre></div><pre class="rust"><code><span class="kw">pub const </span>UNREACHABLE: u8 = <span class="number">0x00</span>;
+<span class="kw">pub const </span>NOP: u8 = <span class="number">0x01</span>;
 <span class="kw">pub const </span>END: u8 = <span class="number">0x0B</span>;
+<span class="kw">pub const </span>RETURN: u8 = <span class="number">0x0F</span>;
+<span class="kw">pub const </span>CALL: u8 = <span class="number">0x10</span>;
 <span class="kw">pub const </span>LOCAL_GET: u8 = <span class="number">0x20</span>;
 <span class="kw">pub const </span>LOCAL_SET: u8 = <span class="number">0x21</span>;
+<span class="kw">pub const </span>LOCAL_TEE: u8 = <span class="number">0x22</span>;
 <span class="kw">pub const </span>GLOBAL_GET: u8 = <span class="number">0x23</span>;
 <span class="kw">pub const </span>GLOBAL_SET: u8 = <span class="number">0x24</span>;
 <span class="kw">pub const </span>I32_LOAD: u8 = <span class="number">0x28</span>;
@@ -134,6 +174,17 @@
 <span class="kw">pub const </span>I32_LE_U: u8 = <span class="number">0x4D</span>;
 <span class="kw">pub const </span>I32_GE_S: u8 = <span class="number">0x4E</span>;
 <span class="kw">pub const </span>I32_GE_U: u8 = <span class="number">0x4F</span>;
+<span class="kw">pub const </span>I64_EQZ: u8 = <span class="number">0x50</span>;
+<span class="kw">pub const </span>I64_EQ: u8 = <span class="number">0x51</span>;
+<span class="kw">pub const </span>I64_NE: u8 = <span class="number">0x52</span>;
+<span class="kw">pub const </span>I64_LT_S: u8 = <span class="number">0x53</span>;
+<span class="kw">pub const </span>I64_LT_U: u8 = <span class="number">0x54</span>;
+<span class="kw">pub const </span>I64_GT_S: u8 = <span class="number">0x55</span>;
+<span class="kw">pub const </span>I64_GT_U: u8 = <span class="number">0x56</span>;
+<span class="kw">pub const </span>I64_LE_S: u8 = <span class="number">0x57</span>;
+<span class="kw">pub const </span>I64_LE_U: u8 = <span class="number">0x58</span>;
+<span class="kw">pub const </span>I64_GE_S: u8 = <span class="number">0x59</span>;
+<span class="kw">pub const </span>I64_GE_U: u8 = <span class="number">0x5A</span>;
 <span class="kw">pub const </span>F32_EQ: u8 = <span class="number">0x5B</span>;
 <span class="kw">pub const </span>F32_NE: u8 = <span class="number">0x5C</span>;
 <span class="kw">pub const </span>F32_LT: u8 = <span class="number">0x5D</span>;
@@ -147,6 +198,7 @@
 <span class="kw">pub const </span>F64_LE: u8 = <span class="number">0x65</span>;
 <span class="kw">pub const </span>F64_GE: u8 = <span class="number">0x66</span>;
 <span class="kw">pub const </span>I32_ADD: u8 = <span class="number">0x6A</span>;
+<span class="kw">pub const </span>I32_SUB: u8 = <span class="number">0x6B</span>;
 <span class="kw">pub const </span>I32_MUL: u8 = <span class="number">0x6C</span>;
 <span class="kw">pub const </span>I32_DIV_S: u8 = <span class="number">0x6D</span>;
 <span class="kw">pub const </span>I32_DIV_U: u8 = <span class="number">0x6E</span>;
@@ -209,9 +261,29 @@
 <span class="kw">pub const </span>F64_MIN: u8 = <span class="number">0xA4</span>;
 <span class="kw">pub const </span>F64_MAX: u8 = <span class="number">0xA5</span>;
 <span class="kw">pub const </span>F64_COPYSIGN: u8 = <span class="number">0xA6</span>;
+<span class="kw">pub const </span>I32_WRAP_I64: u8 = <span class="number">0xA7</span>;
+<span class="kw">pub const </span>I32_TRUNC_F32_S: u8 = <span class="number">0xA8</span>;
+<span class="kw">pub const </span>I32_TRUNC_F32_U: u8 = <span class="number">0xA9</span>;
+<span class="kw">pub const </span>I32_TRUNC_F64_S: u8 = <span class="number">0xAA</span>;
+<span class="kw">pub const </span>I32_TRUNC_F64_U: u8 = <span class="number">0xAB</span>;
+<span class="kw">pub const </span>I64_EXTEND_I32_S: u8 = <span class="number">0xAC</span>;
+<span class="kw">pub const </span>I64_EXTEND_I32_U: u8 = <span class="number">0xAD</span>;
+<span class="kw">pub const </span>I64_TRUNC_F32_S: u8 = <span class="number">0xAE</span>;
+<span class="kw">pub const </span>I64_TRUNC_F32_U: u8 = <span class="number">0xAF</span>;
+<span class="kw">pub const </span>I64_TRUNC_F64_S: u8 = <span class="number">0xB0</span>;
+<span class="kw">pub const </span>I64_TRUNC_F64_U: u8 = <span class="number">0xB1</span>;
 <span class="kw">pub const </span>F32_CONVERT_I32_S: u8 = <span class="number">0xB2</span>;
 <span class="kw">pub const </span>F32_CONVERT_I32_U: u8 = <span class="number">0xB3</span>;
 <span class="kw">pub const </span>F32_CONVERT_I64_S: u8 = <span class="number">0xB4</span>;
 <span class="kw">pub const </span>F32_CONVERT_I64_U: u8 = <span class="number">0xB5</span>;
+<span class="kw">pub const </span>F32_DEMOTE_F64: u8 = <span class="number">0xB6</span>;
+<span class="kw">pub const </span>F64_CONVERT_I32_S: u8 = <span class="number">0xB7</span>;
+<span class="kw">pub const </span>F64_CONVERT_I32_U: u8 = <span class="number">0xB8</span>;
+<span class="kw">pub const </span>F64_CONVERT_I64_S: u8 = <span class="number">0xB9</span>;
+<span class="kw">pub const </span>F64_CONVERT_I64_U: u8 = <span class="number">0xBA</span>;
+<span class="kw">pub const </span>F64_PROMOTE_F32: u8 = <span class="number">0xBB</span>;
+<span class="kw">pub const </span>I32_REINTERPRET_F32: u8 = <span class="number">0xBC</span>;
+<span class="kw">pub const </span>I64_REINTERPRET_F64: u8 = <span class="number">0xBD</span>;
 <span class="kw">pub const </span>F32_REINTERPRET_I32: u8 = <span class="number">0xBE</span>;
+<span class="kw">pub const </span>F64_REINTERPRET_I64: u8 = <span class="number">0xBF</span>;
 </code></pre></div></section></main></body></html>
