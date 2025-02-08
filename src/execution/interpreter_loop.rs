@@ -1118,7 +1118,7 @@ pub(super) fn run<H: HookSet>(
                     .mems
                     .get(mem_idx)
                     .unwrap_validated();
-                let size = mem.size() as u32;
+                let size = mem.size() as u32 + 1;
                 stack.push_value(Value::I32(size));
                 trace!("Instruction: memory.size [] -> [{}]", size);
             }
