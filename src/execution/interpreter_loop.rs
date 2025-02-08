@@ -1118,7 +1118,7 @@ pub(super) fn run<H: HookSet>(
                     .mems
                     .get(mem_idx)
                     .unwrap_validated();
-                let size = mem.size() as u32;
+                let size = mem.size() as u32 + 1;
                 stack.push_value(Value::I32(size));
                 trace!("Instruction: memory.size [] -> [{}]", size);
             }
@@ -1503,7 +1503,7 @@ pub(super) fn run<H: HookSet>(
             I32_SUB => {
                 let v2: i32 = stack.pop_value(ValType::NumType(NumType::I32)).into();
                 let v1: i32 = stack.pop_value(ValType::NumType(NumType::I32)).into();
-                let res = v2.wrapping_sub(v1);
+                let res = v1.wrapping_sub(v2);
 
                 trace!("Instruction: i32.sub [{v1} {v2}] -> [{res}]");
                 stack.push_value(res.into());
