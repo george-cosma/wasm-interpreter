@@ -28,10 +28,11 @@ jobs:
           TESTSUITE_SAVE=1 cargo test -- spec_tests --show-output
           cp testsuite_results.json old.json
       
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          submodules: true
+      - name: Switch
+        run: |
+          cargo clean
+          rm -f Cargo.lock
+          git checkout ${{ github.event.pull_request.head.sha }}
 
       - name: Generate new report
         run: |
