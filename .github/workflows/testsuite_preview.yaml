@@ -26,7 +26,7 @@ jobs:
       - name: Generate old report
         run: |
           TESTSUITE_SAVE=1 cargo test -- spec_tests --show-output
-          cp testsuite_report.json old.json
+          cp testsuite_results.json old.json
       
       - uses: actions/checkout@v4
         with:
@@ -36,7 +36,7 @@ jobs:
       - name: Generate new report
         run: |
          TESTSUITE_SAVE=1 cargo test -- spec_tests --show-output
-         cp testsuite_report.json new.json
+         cp testsuite_results.json new.json
       - name: Compare reports
         run: python3 ./ci_tools/compare_reports.py old.json new.json > testsuite_report.md
 
