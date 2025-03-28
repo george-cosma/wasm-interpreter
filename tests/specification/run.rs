@@ -406,7 +406,7 @@ fn execute_assert_return(
                 .map(|val| val.to_ty())
                 .collect::<Vec<_>>();
 
-            // TODO: more modules ¯\_(:)_/¯
+            // TODO: more modules ¯\_(ツ)_/¯
             let func = interpeter
                 .get_function_by_name(DEFAULT_MODULE, invoke_info.name)
                 .map_err(|err| WasmInterpreterError::new_boxed(wasm::Error::RuntimeError(err)))?;
